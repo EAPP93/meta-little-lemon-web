@@ -1,0 +1,6 @@
+@import "./styles/reset.module.css";
+
+body {
+  grid-template-columns: repeat(12, 90px);
+  gap: 20px;
+}

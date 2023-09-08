@@ -1,0 +1,45 @@
+@import url('../../styles/variables.module.css');
+
+.NavBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.NavBar-ul {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-100%);
+  transition: all 250ms ease-in-out;
+}
+
+.NavBar-ul.is-active {
+  background-color: var(--bg--primary-green);
+  transform: translate(0);
+}
+
+.NavBar-li {
+  list-style: none;
+  margin: 1rem 0;
+
+}
+
+.NavBar-link {
+  text-decoration: none;
+  color: var(--bg-highlight-b);
+  display: block;
+  background-color: var(--bg--primary-yellow);
+  width: 12rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+}

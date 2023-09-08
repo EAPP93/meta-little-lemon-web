@@ -1,4 +1,5 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
@@ -18,6 +19,11 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/
       },
+      // Reglas para archivos CSS para minificarlos y cargarlos en el bundle
+      {
+        use: ['style-loader', 'css-loader'],
+        test: /\.(css)$/i
+      },
       // rules for asset files
       {
         type: 'asset',
@@ -27,5 +33,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json']
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({ // para generar el index.html
+      template: path.resolve(__dirname, '../public/index.html')
+    })
+  ]
 }

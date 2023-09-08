@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ./src",
     "fix": "eslint --fix ./src",
-    "start": "webpack server --config config/webpack.dev.js",
+    "start": "webpack serve --config config/webpack.dev.js",
     "build": "webpack --config config/webpack.prod.js"
   },
   "repository": {
@@ -24,10 +24,14 @@
   "author": "Edwing Abraham Picado Pantoja",
   "license": "MIT",
   "dependencies": {
+    "formik": "^2.4.3",
     "html-webpack-plugin": "^5.5.3",
+    "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "webpack-bundle-analyzer": "^4.9.0"
+    "react-router-dom": "^6.15.0",
+    "webpack-bundle-analyzer": "^4.9.0",
+    "yup": "^1.2.0"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.18.6",

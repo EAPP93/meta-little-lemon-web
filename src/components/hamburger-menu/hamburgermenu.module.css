@@ -1,0 +1,50 @@
+@import url('../../styles/variables.module.css');
+
+.HamburgerMenu {
+  width: 2.5rem;
+  height: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.HamburgerMenu-span {
+  display: block;
+  width: 80%;
+  height: 0.2rem;
+  background-color: var(--bg-highlight-b);
+  border-radius: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 250ms ease-in-out;
+}
+
+.HamburgerMenu-span.is-active {
+  background-color: var(--bg-highlight-w);
+}
+
+.HamburgerMenu-span:nth-child(1) {
+  top: 25%;
+}
+
+.HamburgerMenu-span:nth-child(3) {
+  top: 75%;
+}
+
+.HamburgerMenu-span:nth-child(1).is-active {
+  transform: translate(-50%, 250%) rotate(-45deg);
+  width: 100%;
+}
+
+.HamburgerMenu-span:nth-child(2).is-active {
+  transform: translate(125%, -0.1rem);
+  transition-delay: 100ms;
+  opacity: 0;
+}
+
+.HamburgerMenu-span:nth-child(3).is-active {
+  transform: translate(-50%, -350%) rotate(45deg);
+  width: 100%;
+}

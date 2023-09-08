@@ -7,8 +7,6 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 const { SourceMapDevToolPlugin } = require('webpack')
 
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const path = require('path')
 
 // port config
 const port = process.env.LOCALPORT || 3000
@@ -19,31 +17,25 @@ const devConfig = {
   devServer: {
     port,
     historyApiFallback: true,
-    hot: true
+    hot: true,
+    compress: true,
+    open: {
+      target: [`http://localhost:${port}`, 'http://localhost:8888'],
+      app: {
+        name: 'chrome',
+        arguments: ['--incognito']
+      }
+    }
   },
   devtool: 'source-map',
-  module: {
-    rules: [
-      // Reglas para archivos CSS para minificarlos y cargarlos en el bundle
-      {
-        use: ['style-loader', 'css-loader'],
-        test: /\.(css)$/i
-      }
-    ]
-  },
   plugins: [
-    /* new HotModuleReplacementPlugin(),
-    new ReactRefreshWebpackPlugin(), */
     new SourceMapDevToolPlugin( // para refrescar rapido sin perder lo que se pone en los forms
       {
         filename: '[file].map'
       }
     ),
-    new HtmlWebpackPlugin({ // para generar el index.html
-      template: path.resolve(__dirname, '../public/index.html')
-    }),
     new BundleAnalyzerPlugin({ // para analizar el bundle
-      openAnalyzer: true // para que nos muestre el resultado inmediatamente
+      openAnalyzer: false // para que nos muestre el resultado inmediatamente || true para abrir automaticamente en el navegador por defecto
     })
   ]
 }

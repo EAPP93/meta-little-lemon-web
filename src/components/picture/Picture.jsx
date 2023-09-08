@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './picture.module.css'
-export default function Picture ({ defaultImage = { src: '#', alt: '' }, list = [{ type: 'image/jpeg', srcSet: '#', sizes: '', alt: '' }], style }) {
+export default function Picture ({ defaultImage = { src: '#', alt: '' }, list = [{ type: 'image/jpeg', srcSet: '#', sizes: '', alt: '' }], style, styleImg }) {
   return (
     <picture className={styles.Picture} style={style}>
       {
@@ -13,7 +13,7 @@ export default function Picture ({ defaultImage = { src: '#', alt: '' }, list = 
           />
         })
       }
-      <img loading='lazy' className={styles['Picture-img']} src={defaultImage.src} alt={defaultImage.alt} />
+      <img loading='lazy' className={styles['Picture-img']} src={defaultImage.src} alt={defaultImage.alt} style={ styleImg } />
    </picture>
   )
 }
@@ -25,5 +25,6 @@ Picture.propTypes = {
     srcSet: PropTypes.string,
     sizes: PropTypes.string
   })),
-  style: PropTypes.object
+  style: PropTypes.object,
+  styleImg: PropTypes.object
 }

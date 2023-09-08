@@ -1,7 +1,7 @@
 /* eslint-disable space-infix-ops */
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './hamburgermenu.module.css'
+import styles from './hamburger-menu.module.css'
 
 export default function HamburgerMenu ({ active, isActive }) {
   return (

@@ -1,15 +1,34 @@
+@font-face {
+  font-family: 'Markazi Text';
+  src: local('Markazi Text'), url('../assets/fonts/MarkaziText-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Karla';
+  src: local('Karla'), url('../assets/fonts/Karla-Regular.ttf') format('truetype');
+}
+
 :root {
   /*- background-colors-*/
   /*- primary-colors-*/
-  --bg--primary-green: #495E57;
-  --bg--primary-yellow: #f4ce14;
+  --color--primary-green: #495E57;
+  --color--primary-yellow: #f4ce14;
   /*- secondary-colors-*/
-  --bg-secondary-1: #ee9972;
-  --bg-secondary-2: #fbdabb;
+  --color-secondary-1: #ee9972;
+  --color-secondary-2: #fbdabb;
   /*-highlight-colors-*/
-  --bg-highlight-w: #edefee;
-  --bg-highlight-b: #333333;
+  --color-highlight-w: #edefee;
+  --color-highlight-b: #333333;
 
   /* text */
-  /* text colors */
+  --font-title: 'Markazi Text', Arial, sans-serif;
+  --font-text: 'Karla', Arial, sans-serif;
+
+  /* line-height */
+  --font-line-height: 1.5;
+
+  /* font-size */
+  --font-size-title: 40pt;
+  --font-size-subtitle: 18pt;
+  --font-size-text: 16pt;
 }

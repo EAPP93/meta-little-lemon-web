@@ -1,0 +1,33 @@
+.Dish {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1rem;
+}
+
+.Dish-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.Dish-title {
+  font-family: var(--font-subtitle);
+  font-size: var(--font-size-subtitle);
+  color: var(--color-highlight-b);
+}
+
+.Dish-text {
+  font-family: var(--font-text);
+  font-size: var(--font-size-text);
+  color: var(--color-highlight-b);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.Dish-price {
+  font-family: var(--font-text);
+  font-size: var(--font-size-text);
+  color: var(--color-highlight-b);
+}

@@ -1,22 +1,22 @@
 import * as React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
-import Home from '../pages/home/'
+import HomePage from '../pages/home/'
 import NotFound from '../pages/not-found'
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />,
+    element: <HomePage />,
     loader: () => Promise.resolve('hola'),
     errorElement: <NotFound/>
   },
   {
     path: '/home',
-    element: <Home />
+    element: <HomePage />
   },
   {
     path: '/login',
-    element: <Home />,
+    element: <HomePage />,
     loader: () => Promise.resolve('hola'),
     errorElement: <NotFound/>
   },

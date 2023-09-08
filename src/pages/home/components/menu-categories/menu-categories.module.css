@@ -1,0 +1,28 @@
+.MenuCategories {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.MenuCategories-title {
+  font-family: var(--font-text);
+  font-size: var(--font-size-subtitle);
+  color: var(--color-highlight-b);
+}
+
+.MenuCategories-Categories {
+  padding: 1rem 0;
+  display: flex;
+  gap: 0.625rem;
+  overflow-x: auto;
+}
+
+.MenuCategories-button {
+  background-color: var(--color-highlight-w);
+  font-family: var(--font-text);
+  font-size: var(--font-size-text);
+  padding: 0.625rem;
+  border-radius: 1rem;
+  white-space: nowrap;
+}

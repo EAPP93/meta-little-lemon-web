@@ -1,2 +1,2 @@
-import BookingForm from './BookingForm'
-export default BookingForm
+import BookingPage from './BookingPage'
+export default BookingPage

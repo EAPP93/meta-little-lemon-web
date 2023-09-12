@@ -1,4 +1,4 @@
-@import url('../../styles/variables.module.css');
+@import '../../styles/variables.module.css';
 
 .HamburgerMenu {
   width: 2.5rem;

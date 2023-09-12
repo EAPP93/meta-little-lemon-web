@@ -1,6 +1,0 @@
-@import url(../../../../styles/variables.module.css);
-
-.Main {
-  display: flex;
-  flex-direction: column;
-}

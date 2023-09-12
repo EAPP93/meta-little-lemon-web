@@ -27,7 +27,7 @@ const devConfig = {
       }
     }
   },
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
   plugins: [
     new SourceMapDevToolPlugin( // para refrescar rapido sin perder lo que se pone en los forms
       {

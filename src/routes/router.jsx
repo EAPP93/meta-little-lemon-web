@@ -2,32 +2,32 @@ import * as React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import HomePage from '../pages/home/'
 import NotFound from '../pages/not-found'
+import BookingPage from '../pages/booking/BookingPage '
+import AboutPage from '../pages/about'
+import MenuPage from '../pages/menu/MenuPage'
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <HomePage />,
-    loader: () => Promise.resolve('hola'),
     errorElement: <NotFound/>
   },
   {
-    path: '/home',
+    path: '/Home',
     element: <HomePage />
   },
   {
-    path: '/login',
-    element: <HomePage />,
-    loader: () => Promise.resolve('hola'),
+    path: '/Reservations',
+    element: <BookingPage />,
     errorElement: <NotFound/>
   },
   {
-    path: '/singup'
+    path: '/About',
+    element: <AboutPage/>
   },
   {
-    path: '/payment'
-  },
-  {
-    path: '/reservation'
+    path: '/Menu',
+    element: <MenuPage/>
   },
   {
     path: '/cart'

@@ -1,0 +1,24 @@
+@import url(../../styles/variables.module.css);
+
+.Menu {
+  height: 90vh;
+  overflow: hidden;
+}
+
+.Menu-article {
+  padding: 1rem;
+  background-color: var(--color--primary-green);
+  margin-bottom: 1rem;
+}
+
+.Menu-title {
+  font-family: var(--font-title);
+  font-size: var(--font-size-subtitle);
+  color: var(--color-secondary-1);
+}
+
+.Menu-text {
+  font-family: var(--font-text);
+  font-size: var(--font-size-text);
+  color: var(--color-secondary-2);
+}

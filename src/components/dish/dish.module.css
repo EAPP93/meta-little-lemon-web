@@ -1,24 +1,27 @@
+@import '../../styles/variables.module.css';
+
 .Dish {
   display: flex;
   flex-direction: row-reverse;
-  gap: 1rem;
+  justify-content: space-around;
 }
 
 .Dish-section {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  width: 60%;
 }
 
 .Dish-title {
   font-family: var(--font-subtitle);
-  font-size: var(--font-size-subtitle);
+  font-size: var(--font-size-text);
   color: var(--color-highlight-b);
 }
 
 .Dish-text {
   font-family: var(--font-text);
-  font-size: var(--font-size-text);
+  font-size: var(--font-size-subtext);
   color: var(--color-highlight-b);
   display: -webkit-box;
   -webkit-line-clamp: 2;

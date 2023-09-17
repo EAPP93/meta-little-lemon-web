@@ -1,0 +1,17 @@
+.Specials {
+  background-color: red;
+  margin-top: 6.5rem;
+  padding: 1.5rem 1rem;
+}
+
+@media screen and (min-width: 769px) {
+  .Specials {
+    padding: 1.5vw clamp(8vw, 15vw, 18vw);
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .Specials {
+    padding: 1.5vw clamp(15vw, 22vw, 22.5rem);
+  }
+}

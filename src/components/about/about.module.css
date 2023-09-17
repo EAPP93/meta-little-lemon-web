@@ -48,9 +48,50 @@
 .Article-link {
   background-color: var(--color--primary-yellow);
   padding: 0.5rem 1rem;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   font-family: var(--font-text);
   font-size: 1rem;
   color: var(--color-highlight-b);
   text-decoration: none;
+}
+
+@media screen and (min-width: 577px) {
+  .Article {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 2rem);
+    padding: 1.5vw clamp(2.5vw, 8vw, 10vw);
+  }
+
+  .Article-header {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+  }
+
+  .Article-main {
+    grid-column: 1/-1;
+    grid-row-start: 1;
+  }
+
+  .Article-text {
+    margin-top: 6rem;
+  }
+
+  .Article-footer {
+    grid-column: 1/-1;
+    grid-row-start: 9;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .Article {
+    padding: 1.5vw clamp(8vw, 15vw, 18vw);
+  }
+}
+
+
+@media screen and (min-width: 1201px) {
+  .Article {
+    padding: 1.5vw clamp(15vw, 22vw, 22.5rem);
+  }
 }

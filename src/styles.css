@@ -1,6 +1,14 @@
-@import "./styles/reset.module.css";
+@import './styles/reset.module.css';
 
 body {
   grid-template-columns: repeat(12, 90px);
   gap: 20px;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+@media screen and (min-width: 577px) {
+  body {
+    overflow-y: auto;
+  }
 }

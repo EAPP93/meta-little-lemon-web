@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'Markazi Text';
-  src: local('Markazi Text'), url('../assets/fonts/MarkaziText-Medium.ttf') format('truetype');
+  src: local('Markazi Text'), url('../assets/fonts/MarkaziText-Medium.ttf') format('woff2');
 }
 
 @font-face {
   font-family: 'Karla';
-  src: local('Karla'), url('../assets/fonts/Karla-Regular.ttf') format('truetype');
+  src: local('Karla'), url('../assets/fonts/Karla-Regular.ttf') format('woff2');
 }
 
 :root {
@@ -28,7 +28,8 @@
   --font-line-height: 1.5;
 
   /* font-size */
-  --font-size-title: 40pt;
-  --font-size-subtitle: 18pt;
-  --font-size-text: 16pt;
+  --font-size-title: clamp(4rem, 1.5vw, 40pt);
+  --font-size-subtitle: clamp(2.25rem, 1.5vw, 18pt);
+  --font-size-text: clamp(1.125rem, 1.5vw, 16pt);
+  --font-size-subtext: clamp(1rem, 1.5vw, 14pt);
 }

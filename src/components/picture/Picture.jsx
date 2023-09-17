@@ -19,7 +19,7 @@ export default function Picture ({ defaultImage = { src: '#', alt: '' }, list = 
 }
 
 Picture.propTypes = {
-  defaultImage: PropTypes.object,
+  defaultImage: PropTypes.object.isRequired,
   list: PropTypes.arrayOf(PropTypes.shape({
     type: PropTypes.string,
     srcSet: PropTypes.string,

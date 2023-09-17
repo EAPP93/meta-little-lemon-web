@@ -27,6 +27,22 @@ const devConfig = {
       }
     }
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true
+            }
+          }
+        ]
+      }
+    ]
+  },
   devtool: 'source-map',
   plugins: [
     new SourceMapDevToolPlugin( // para refrescar rapido sin perder lo que se pone en los forms

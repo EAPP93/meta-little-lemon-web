@@ -12,16 +12,12 @@ export default function NavBar () {
 
   const [size, setSize] = useState(window.innerWidth)
 
+  const handleResize = () => {
+    setSize(window.innerWidth)
+  }
+
   useEffect(() => {
-    // Función para actualizar el tamaño del viewport cuando cambia la ventana
-    const handleResize = () => {
-      setSize(window.innerWidth)
-    }
-
-    // Agrega un event listener para detectar cambios en el tamaño del viewport
     window.addEventListener('resize', handleResize)
-
-    // Limpia el event listener cuando el componente se desmonta
     return () => {
       window.removeEventListener('resize', handleResize)
     }
@@ -43,10 +39,10 @@ export default function NavBar () {
     <nav className={styles.NavBar}>
 
       {/* Hamburger Menu */}
-      {size < 576 && <HamburgerMenu active={active} isActive={isActive}/>}
+      {size < 577 && <HamburgerMenu active={active} isActive={isActive}/>}
 
       {/* Logo Little Lemon */}
-      <Picture defaultImage={{ src: LOGO(), alt: 'Logo Little Lemon' }} list={[]} style={{ width: 'calc(8rem + 1.25vw)', height: 'calc(2.5rem + 1vw)' }}/>
+      <Picture defaultImage={{ src: LOGO(), alt: 'Logo Little Lemon' }} list={[]} style={{ width: 'calc(8rem + 1.25vw)', height: 'calc(2.5rem + 1vw)' } } styleImg={{ objectFit: 'contain' }}/>
 
       {/* Menu */}
       <ul className={ active ? `${styles['NavBar-ul']} ${styles['is-active']}` : `${styles['NavBar-ul']}`}>
@@ -62,7 +58,7 @@ export default function NavBar () {
       </ul>
 
       {/* imagen carrito de compras */}
-      {size < 576 && <Picture defaultImage={{ src: Carrito(), alt: 'Carrito de compras' }} list={[]} style={{ width: 'calc(2.6rem + 1vw)', height: 'calc(2.5rem + 1vw)' }} />}
+      {size < 577 && <Picture defaultImage={{ src: Carrito(), alt: 'Carrito de compras' }} list={[]} style={{ width: 'calc(2.6rem + 1vw)', height: 'calc(2.5rem + 1vw)' }} />}
 
     </nav>
   )

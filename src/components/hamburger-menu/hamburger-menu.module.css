@@ -1,4 +1,4 @@
-@import url('../../styles/variables.module.css');
+@import '../../styles/variables.module.css';
 
 .HamburgerMenu {
   width: 2.5rem;
@@ -9,9 +9,6 @@
   cursor: pointer;
 }
 
-.HamburgerMenu.is-active {
-  position: fixed;
-}
 
 .HamburgerMenu-span {
   display: block;

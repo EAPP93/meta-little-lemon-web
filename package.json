@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ./src",
-    "fix": "eslint --fix ./src",
+    "lint": "eslint src/*",
+    "fix": "eslint --fix src/*",
     "start": "webpack serve --config config/webpack.dev.js",
     "build": "webpack --config config/webpack.prod.js"
   },
@@ -43,6 +43,7 @@
     "css-loader": "^6.8.1",
     "eslint": "^8.48.0",
     "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-css": "^0.8.1",
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-n": "^16.0.2",
     "eslint-plugin-promise": "^6.1.1",

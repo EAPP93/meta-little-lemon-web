@@ -1,3 +1,5 @@
+@import '../../styles/variables.module.css';
+
 .Article {
   display: flex;
   flex-direction: column;

@@ -1,9 +1,5 @@
 .Main {
   display: flex;
   flex-direction: column;
-<<<<<<< HEAD
   max-height: calc(100% - 5rem);
-=======
-  max-height: calc(100dvh - 5rem);
->>>>>>> main
 }

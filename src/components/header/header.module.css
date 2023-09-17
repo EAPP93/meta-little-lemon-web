@@ -1,10 +1,6 @@
 .header {
   display: flex;
-<<<<<<< HEAD
   justify-content: center;
-=======
-  max-height: 5rem;
->>>>>>> main
   padding: 1rem 1.125rem 1.25rem 1.125rem;
   height: 5rem;
   overflow-y: hidden;

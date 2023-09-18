@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './picture.module.css'
-export default function Picture ({ defaultImage = { src: '#', alt: '' }, list = [{ type: 'image/jpeg', srcSet: '#', sizes: '', alt: '' }], style, styleImg }) {
+export default function Picture ({ defaultImage = { src: '#', alt: '' }, list = [{ type: 'image/jpeg', srcSet: '#', sizes: '', alt: '' }], picture, img }) {
   return (
-    <picture className={styles.Picture} style={style}>
+    <picture className={picture} >
       {
         list.map((el, index) => {
           return <source key={index}
@@ -13,7 +12,7 @@ export default function Picture ({ defaultImage = { src: '#', alt: '' }, list = 
           />
         })
       }
-      <img loading='lazy' className={styles['Picture-img']} src={defaultImage.src} alt={defaultImage.alt} style={ styleImg } />
+      <img loading='lazy' src={defaultImage.src} alt={defaultImage.alt} className={img} />
    </picture>
   )
 }
@@ -25,6 +24,6 @@ Picture.propTypes = {
     srcSet: PropTypes.string,
     sizes: PropTypes.string
   })),
-  style: PropTypes.object,
-  styleImg: PropTypes.object
+  picture: PropTypes.string,
+  picture: PropTypes.string,
 }

@@ -4,7 +4,7 @@ import Picture from '../../components/picture/Picture'
 import { Link } from 'react-router-dom'
 
 export default function About () {
-  const AboutImage = () => require('../../assets/img/restauranfood.jpg')
+  const AboutImage = () => require('../../assets/img/restauran-food-min.png')
   console.log(styles)
   return (
     <article className={styles.Article}>
@@ -14,7 +14,7 @@ export default function About () {
         </header>
         <main className={styles['Article-main']}>
           <p className={styles['Article-text']}>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
-          <Picture role='img' defaultImage={{ src: AboutImage(), alt: 'Image of food of the restaurant Little Lemon' }} list={[]} style={{ width: '40%', height: '30vw', maxHeight: '26.25rem' }} styleImg={{ borderRadius: '0.5rem' }}/>
+          <Picture role='img' defaultImage={{ src: AboutImage(), alt: 'Image of food of the restaurant Little Lemon' }} list={[]} picture={styles['Article-picture']} img={styles['Article-img']}/>
         </main>
         <footer className={styles['Article-footer']}>
           <Link className={styles['Article-link']} role='button' to='/Reservations'>Reserve a table</Link>

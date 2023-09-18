@@ -30,8 +30,17 @@
 
 .Article-main {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
   margin: 1rem 0;
+}
+
+.Article-picture {
+  max-width: 10rem;
+  max-height: 10rem;
+}
+
+.Article-img {
+  border-radius: 1rem;
 }
 
 .Article-text {
@@ -73,6 +82,13 @@
   .Article-main {
     grid-column: 1/-1;
     grid-row-start: 1;
+    gap: 2rem;
+  }
+
+  .Article-picture {
+    height: 50vw;
+    max-width: 23.5rem;
+    max-height: 26.25rem;
   }
 
   .Article-text {

@@ -1,7 +1,35 @@
 .Specials {
-  background-color: red;
   margin-top: 6.5rem;
   padding: 1.5rem 1rem;
+}
+
+.Specials-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3.5rem 0;
+}
+
+.Specials-title {
+  font-family: var(--font-text);
+  font-size: var(--font-size-subtitle);
+  color: var(--color-highlight-b);
+}
+
+.Specials-button {
+  background-color: var(--color--primary-yellow);
+  color: var(--color-highlight-b);
+  font-family: var(--font-text);
+  font-size: var(--font-size-subtext);
+  width: 12.5rem;
+  height: 3.75rem;
+  border-radius: 0.35rem;
+  cursor: pointer;
+}
+
+.Specials-Dishes {
+  display: flex;
+  gap: 1rem;
 }
 
 @media screen and (min-width: 769px) {

@@ -8,6 +8,7 @@ export default function NavBar () {
   const [active, setActive] = useState(false)
   const isActive = () => {
     setActive(active => !active)
+    document.body.style.overflow = !active ? 'hidden' : ''
   }
 
   const [size, setSize] = useState(window.innerWidth)

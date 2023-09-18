@@ -4,12 +4,17 @@
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around;
+  gap: 1rem;
 }
 
-.Dish-section {
+.Dish-picture {
+  width: 40%;
+}
+
+.text-section {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  justify-content: space-around;
   width: 60%;
 }
 
@@ -19,7 +24,7 @@
   color: var(--color-highlight-b);
 }
 
-.Dish-text {
+.Dish-about {
   font-family: var(--font-text);
   font-size: var(--font-size-subtext);
   color: var(--color-highlight-b);
@@ -33,4 +38,66 @@
   font-family: var(--font-text);
   font-size: var(--font-size-text);
   color: var(--color-highlight-b);
+}
+
+@media screen and (min-width: 577px) {
+  .Dish {
+    width: 100%;
+    flex-direction: column;
+    justify-content: start;
+    gap: 0;
+  }
+
+  .Dish-picture {
+    width: 100%;
+    max-height: 42.5%;
+  }
+
+  .Dish-img {
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .text-section {
+    width: 100%;
+    height: 100%;
+    max-height: 20rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr 4fr 1fr;
+    background-color: var(--color-highlight-w);
+    padding: 1rem;
+  }
+
+  .Dish-title {
+    grid-column: 1/5;
+    grid-row-start: 1;
+  }
+
+  .Dish-about {
+    grid-column: 1/-1;
+    display: inline;
+  }
+
+  .Dish-price {
+    grid-column: 5/-1;
+    grid-row-start: 1;
+    color: var(--color-secondary-1);
+  }
+
+  .Dish-button {
+    grid-column: 1/-1;
+    display: flex;
+    gap: 1rem;
+    font-family: var(--font-text);
+    font-size: var(--font-size-subtext);
+    color: var(--color-highlight-b);
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .Dish-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    object-fit: contain;
+  }
 }

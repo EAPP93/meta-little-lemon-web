@@ -25,7 +25,7 @@ export default function HomePage () {
   return (
     <>
       <Header />
-      <Main>
+      <Main >
         <About />
         {size < 577 && <MenuCategories />}
         {size < 577 && <MenuDishes />}

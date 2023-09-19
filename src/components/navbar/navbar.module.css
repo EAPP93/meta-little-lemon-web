@@ -7,6 +7,14 @@
   align-items: center;
 }
 
+.NavBar-picture {
+  width: calc(8rem + 2vw);
+}
+
+.NavBar-img {
+  object-fit: contain;
+}
+
 .NavBar-ul {
   background-color: var(--color--primary-green);
   position: fixed;
@@ -55,7 +63,7 @@
 
   .NavBar {
     justify-content: center;
-    gap: 13vw;
+    gap: 15vw;
   }
 
   .NavBar-ul {

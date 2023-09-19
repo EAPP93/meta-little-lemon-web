@@ -43,7 +43,7 @@ export default function NavBar () {
       {size < 577 && <HamburgerMenu active={active} isActive={isActive}/>}
 
       {/* Logo Little Lemon */}
-      <Picture defaultImage={{ src: LOGO(), alt: 'Logo Little Lemon' }} list={[]} style={{ width: 'calc(8rem + 1.25vw)', height: 'calc(2.5rem + 1vw)' } } styleImg={{ objectFit: 'contain' }}/>
+      <Picture defaultImage={{ src: LOGO(), alt: 'Logo Little Lemon' }} list={[]} picture={styles['NavBar-picture']} img={styles['NavBar-img']} />
 
       {/* Menu */}
       <ul className={ active ? `${styles['NavBar-ul']} ${styles['is-active']}` : `${styles['NavBar-ul']}`}>

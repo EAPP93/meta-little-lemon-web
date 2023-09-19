@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 
 export default function About () {
   const AboutImage = () => require('../../assets/img/restauran-food-min.png')
-  console.log(styles)
   return (
     <article className={styles.Article}>
         <header className={styles['Article-header']}>

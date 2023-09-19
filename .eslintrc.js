@@ -5,20 +5,28 @@ module.exports = {
   },
   extends: [
     'standard',
-    'plugin:react/recommended',
-    'plugin:css/recommended'
+    'plugin:react/recommended'
+  ],
+  overrides: [
+    {
+      env: {
+        node: true
+      },
+      files: [
+        '.eslintrc.{js,cjs}'
+      ],
+      parserOptions: {
+        sourceType: 'script'
+      }
+    }
   ],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
   plugins: [
-    'react',
-    'css'
+    'react'
   ],
-  settings: {
-    react: {
-      version: '18.2.0'
-    }
+  rules: {
   }
 }

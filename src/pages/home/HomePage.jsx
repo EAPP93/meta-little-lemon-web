@@ -30,9 +30,10 @@ export default function HomePage () {
         <About />
         {
           size < 577
-            ? <><MenuCategories />
-              <MenuDishes />
-            </>
+            ? <>
+                <MenuCategories />
+                <MenuDishes />
+              </>
             : <>
               <Specials size={size} />
               <Testimonials />

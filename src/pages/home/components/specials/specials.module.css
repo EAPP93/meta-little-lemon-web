@@ -33,12 +33,12 @@
 
 @media screen and (min-width: 769px) {
   .Specials {
-    padding: 2.5vw 15vw;
+    padding: 2.5vw 17.5vw;
   }
 }
 
 @media screen and (min-width: 1201px) {
   .Specials {
-    padding: 3.5vw 20vw;
+    padding: 3.5vw 22.5vw;
   }
 }

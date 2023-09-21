@@ -9,7 +9,7 @@ export default function About () {
     <article className={styles.Article}>
         <header className={styles['Article-header']}>
           <h1 className={styles['Article-title']}>Little Lemon</h1>
-          <h4 className={styles['Article-subtitle']}>Madrid</h4>
+          <h2 className={styles['Article-subtitle']}>Madrid</h2>
         </header>
         <main className={styles['Article-main']}>
           <p className={styles['Article-text']}>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>

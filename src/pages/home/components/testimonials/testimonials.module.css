@@ -65,9 +65,15 @@
   color: var(--color-highlight-b);
 }
 
+@media screen and (min-width: 577px) {
+  .Testimonials {
+    padding: 1.5vw 5vw;
+  }
+}
+
 @media screen and (min-width: 769px) {
   .Testimonials {
-    padding: 1.5vw 17.5vw;
+    padding: 1.5vw 15vw;
   }
 }
 

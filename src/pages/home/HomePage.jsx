@@ -8,6 +8,7 @@ import MenuDishes from '../../components/menu-dishes/MenuDishes'
 import Specials from './components/specials'
 import Testimonials from './components/testimonials/testimonials'
 import AboutRestaurant from './components/about-restaurant/AboutRestaurant'
+import Footer from '../../components/footer/Footer'
 
 export default function HomePage () {
   const [size, setSize] = useState(window.innerWidth)
@@ -40,14 +41,9 @@ export default function HomePage () {
               <AboutRestaurant />
             </>
         }
-        {/* {size < 577 && <MenuCategories />}
-        {size < 577 && <MenuDishes />}
-        {size > 576 && <Specials size={size}/>}
-        {size > 576 && <footer> hola</footer>} */}
-
       </Main>
 
-      {size > 576 && <footer> hola</footer>}
+      {size > 576 && <Footer />}
     </>
   )
 }

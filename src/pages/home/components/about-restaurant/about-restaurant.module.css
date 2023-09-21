@@ -56,12 +56,16 @@
   top: 0;
 }
 
+@media screen and (min-width: 577px) {
+  .AboutRestaurant {
+    padding: 2.5vw 5vw;
+  }
+}
+
 @media screen and (min-width: 769px) {
   .AboutRestaurant {
-    padding: 2.5vw 17.5vw;
+    padding: 2.5vw 15vw;
   }
-
-
 }
 
 @media screen and (min-width: 1201px) {

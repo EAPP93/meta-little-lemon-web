@@ -67,7 +67,7 @@
 
 @media screen and (min-width: 577px) {
   .Article {
-    padding: 1.5vw 10vw;
+    padding: 1.5vw 5vw;
   }
 
   .Article-main {
@@ -92,7 +92,7 @@
 
 @media screen and (min-width: 769px) {
   .Article {
-    padding: 1.5vw 17.5vw;
+    padding: 1.5vw 15vw;
   }
 
   .Article-picture {

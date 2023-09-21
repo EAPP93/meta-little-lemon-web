@@ -6,9 +6,15 @@
   overflow-y: hidden;
 }
 
+@media screen and (min-width: 577px) {
+  .header {
+    padding: 1.5vw 5vw;
+  }
+}
+
 @media screen and (min-width: 769px) {
   .header {
-    padding: 1.5vw 17.5vw;
+    padding: 1.5vw 15vw;
   }
 }
 

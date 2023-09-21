@@ -3,7 +3,7 @@ import styles from './testimonials.module.css'
 import Picture from '../../../../components/picture/Picture'
 
 export default function Testimonials () {
-  const Start = () => require('../../../../assets/img/start-min.png')
+  const Start = () => require('../../../../assets/img/start.png')
 
   const Users = [
     {

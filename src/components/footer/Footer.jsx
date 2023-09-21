@@ -42,7 +42,7 @@ export default function Footer () {
         {ListMenu.map((el, index) => {
           return (
             <li key={index}>
-              <Link to={`/${el.toLowerCase()}`} role='button'>
+              <Link to={`/${el.toLowerCase()}`} role='button' className={styles['Footer-link']}>
                 {el}
               </Link>
             </li>

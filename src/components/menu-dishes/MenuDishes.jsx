@@ -8,55 +8,55 @@ export default function MenuDishes ({ style }) {
       name: 'Greek Salad',
       price: 12.99,
       about: 'The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.',
-      getImg: () => require('../../assets/img/greek-salad.jpg')
+      getImg: () => require('../../assets/img/greek-salad-min.png')
     },
     {
       name: 'Bruchetta',
       price: 12.99,
       about: 'Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.',
-      getImg: () => require('../../assets/img/bruchetta.jpg')
+      getImg: () => require('../../assets/img/bruchetta-min.png')
     },
     {
       name: 'Lemon Dessert',
       price: 12.99,
       about: 'This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.',
-      getImg: () => require('../../assets/img/lemon dessert.jpg')
+      getImg: () => require('../../assets/img/lemon-dessert-min.png')
     },
     {
       name: 'Greek Salad',
       price: 12.99,
       about: 'The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.',
-      getImg: () => require('../../assets/img/greek-salad.jpg')
+      getImg: () => require('../../assets/img/greek-salad-min.png')
     },
     {
       name: 'Bruchetta',
       price: 12.99,
       about: 'Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.',
-      getImg: () => require('../../assets/img/bruchetta.jpg')
+      getImg: () => require('../../assets/img/bruchetta-min.png')
     },
     {
       name: 'Lemon Dessert',
       price: 12.99,
       about: 'This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.',
-      getImg: () => require('../../assets/img/lemon dessert.jpg')
+      getImg: () => require('../../assets/img/lemon-dessert-min.png')
     },
     {
       name: 'Greek Salad',
       price: 12.99,
       about: 'The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.',
-      getImg: () => require('../../assets/img/greek-salad.jpg')
+      getImg: () => require('../../assets/img/greek-salad-min.png')
     },
     {
       name: 'Bruchetta',
       price: 12.99,
       about: 'Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.',
-      getImg: () => require('../../assets/img/bruchetta.jpg')
+      getImg: () => require('../../assets/img/bruchetta-min.png')
     },
     {
       name: 'Lemon Dessert',
       price: 12.99,
       about: 'This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.',
-      getImg: () => require('../../assets/img/lemon dessert.jpg')
+      getImg: () => require('../../assets/img/lemon-dessert-min.png')
     }
   ]
   return (

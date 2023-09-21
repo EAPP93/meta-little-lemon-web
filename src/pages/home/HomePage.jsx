@@ -7,7 +7,7 @@ import About from '../../components/about'
 import MenuDishes from '../../components/menu-dishes/MenuDishes'
 import Specials from './components/specials'
 import Testimonials from './components/testimonials/testimonials'
-import AboutRestaurant from './components/about-restaurant/AboutRestaurant'
+import AboutRestaurant from '../../components/about-restaurant'
 import Footer from '../../components/footer/Footer'
 
 export default function HomePage () {

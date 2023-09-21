@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './about-restaurant.module.css'
-import Picture from '../../../../components/picture'
+import Picture from '../picture'
 export default function AboutRestaurant () {
-  const img1 = () => require('../../../../assets/img/cooker-min.png')
-  const img2 = () => require('../../../../assets/img/restauran-food-2-min.png')
+  const img1 = () => require('../../assets/img/cooker-min.png')
+  const img2 = () => require('../../assets/img/restauran-food-2-min.png')
   return (
     <section className={styles.AboutRestaurant}>
       <div className={styles['AboutRestaurant-about']} >

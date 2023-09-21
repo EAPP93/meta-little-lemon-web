@@ -29,6 +29,10 @@
   list-style: none;
 }
 
+.Footer-link:hover {
+  color: var(--color-highlight-w);
+}
+
 a {
   text-decoration: none;
   color: var(--color-highlight-b);

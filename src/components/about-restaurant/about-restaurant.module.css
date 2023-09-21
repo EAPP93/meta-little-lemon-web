@@ -1,4 +1,4 @@
-@import url('../../../../styles/variables.module.css');
+@import url('../../styles/variables.module.css');
 
 .AboutRestaurant {
   display: flex;

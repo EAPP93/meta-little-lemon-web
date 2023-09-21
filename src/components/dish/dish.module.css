@@ -11,6 +11,10 @@
   width: 40%;
 }
 
+.Dish-img {
+  border-radius: 0.25rem;
+}
+
 .text-section {
   display: flex;
   flex-direction: column;

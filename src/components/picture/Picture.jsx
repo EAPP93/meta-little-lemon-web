@@ -25,5 +25,5 @@ Picture.propTypes = {
     sizes: PropTypes.string
   })),
   picture: PropTypes.string,
-  picture: PropTypes.string,
+  img: PropTypes.string
 }

@@ -1,0 +1,78 @@
+@import url('../../../../styles/variables.module.css');
+
+.Testimonials {
+  background-color: var(--color--primary-green);
+  padding: 1.5rem 1rem;
+}
+
+.Testimonials-title {
+  font-family: var(--font-title);
+  font-size: var(--font-size-subtitle);
+  color: var(--color-highlight-b);
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.Testimonials-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: calc(2rem + 2.5vw);
+}
+
+.Testimonials-article {
+  background-color: var(--color-highlight-w);
+  width: calc(10rem + 5vw);
+  max-width: 30%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.Testimonials-header {
+  display: flex;
+}
+
+.Testimonials-rating {
+  margin-right: 1vw;
+}
+
+.Testimonials-start {
+  width: 1rem;
+  margin-right: 0.25rem;
+}
+
+.Testimonials-main {
+  display: flex;
+  gap: 1rem;
+}
+
+.Testimonials-picture {
+  width: calc(2rem + 5vw);
+  height: calc(2rem + 5vw);
+}
+
+.Testimonials-img {
+  border-radius: 0.5rem;
+}
+
+.Testimonials-rating,
+.Testimonials-name,
+.Testimonials-review {
+  font-family: var(--font-text);
+  font-size: var(--font-size-subtext);
+  color: var(--color-highlight-b);
+}
+
+@media screen and (min-width: 769px) {
+  .Testimonials {
+    padding: 1.5vw 15vw;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .Testimonials {
+    padding: 2.5vw 20vw;
+  }
+}

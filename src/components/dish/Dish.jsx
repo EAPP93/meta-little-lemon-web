@@ -3,7 +3,7 @@ import Picture from '../picture/Picture'
 import PropTypes from 'prop-types'
 import styles from './dish.module.css'
 
-export default function Dish({ img, name, about, price, size }) {
+export default function Dish ({ img, name, about, price, size }) {
   const icon = () => require('../../assets/img/icon.svg')
   return (
     <article className={styles.Dish}>
@@ -15,7 +15,7 @@ export default function Dish({ img, name, about, price, size }) {
         {
           size > 576 && <button className={styles['Dish-button']}>
             Order a delivery
-            <Picture img={styles['Dish-icon']} defaultImage={{ src: icon(), alt: `icon delivery` }} list={[]}/>
+            <Picture img={styles['Dish-icon']} defaultImage={{ src: icon(), alt: 'icon delivery' }} list={[]}/>
           </button>
         }
 

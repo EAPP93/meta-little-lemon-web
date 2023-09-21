@@ -1,0 +1,71 @@
+@import url('../../../../styles/variables.module.css');
+
+.AboutRestaurant {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  gap: 1rem;
+}
+
+.AboutRestaurant-title,
+.AboutRestaurant-subtitle {
+  font-family: var(--font-title);
+  color: var(--color-highlight-b);
+  line-height: var(--font-size-subtitle);
+}
+
+.AboutRestaurant-title {
+  font-size: var(--font-size-title);
+}
+
+.AboutRestaurant-subtitle {
+  font-size: var(--font-size-subtitle);
+  margin-bottom: 1rem;
+}
+
+.AboutRestaurant-about {
+  width: 50%;
+}
+
+.AboutRestaurant-images {
+  position: relative;
+  display: flex;
+  width: calc(18rem + 3.5vw);
+  height: calc(18rem + 3.5vw);
+}
+
+.AboutRestaurant-picture {
+  width: 60%;
+  height: 75%;
+}
+
+.AboutRestaurant-img {
+  border-radius: 0.25rem;
+}
+
+.AboutRestaurant-picture:nth-child(1) {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.AboutRestaurant-picture:nth-child(2) {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+@media screen and (min-width: 769px) {
+  .AboutRestaurant {
+    padding: 2.5vw 15vw;
+  }
+
+
+}
+
+@media screen and (min-width: 1201px) {
+  .AboutRestaurant {
+    padding: 3.5vw 20vw;
+  }
+}

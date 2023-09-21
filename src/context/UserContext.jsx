@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, createContext, useContext } from 'react'
 import PropTypes from 'prop-types'
 
-const Context = React.createContext('null')
+const Context = createContext('null')
 
 export function UserContext ({ children }) {
   const [log, setLog] = useState(false)
@@ -17,4 +17,8 @@ export function UserContext ({ children }) {
 
 UserContext.propTypes = {
   children: PropTypes.node
+}
+
+export const useUserContext = () => {
+  return useContext(Context)
 }

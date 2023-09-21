@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react'
 
 import Header from '../../components/header'
 import Main from '../../components/main'
-
 import MenuCategories from './components/menu-categories'
 import About from '../../components/about'
 import MenuDishes from '../../components/menu-dishes/MenuDishes'
 import Specials from './components/specials'
+import Testimonials from './components/testimonials/testimonials'
+import AboutRestaurant from './components/about-restaurant/AboutRestaurant'
 
 export default function HomePage () {
   const [size, setSize] = useState(window.innerWidth)
@@ -27,11 +28,25 @@ export default function HomePage () {
       <Header />
       <Main >
         <About />
-        {size < 577 && <MenuCategories />}
+        {
+          size < 577
+            ? <><MenuCategories />
+              <MenuDishes />
+            </>
+            : <>
+              <Specials size={size} />
+              <Testimonials />
+              <AboutRestaurant />
+            </>
+        }
+        {/* {size < 577 && <MenuCategories />}
         {size < 577 && <MenuDishes />}
         {size > 576 && <Specials size={size}/>}
-        {size > 576 && <footer> hola</footer>}
+        {size > 576 && <footer> hola</footer>} */}
+
       </Main>
+
+      {size > 576 && <footer> hola</footer>}
     </>
   )
 }

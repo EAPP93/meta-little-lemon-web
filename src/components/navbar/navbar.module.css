@@ -59,11 +59,14 @@
   line-height: var(--font-line-height);
 }
 
+.NavBar-link:hover {
+  color: var(--color--primary-yellow);
+}
+
 @media screen and (min-width: 577px) {
 
   .NavBar {
-    justify-content: center;
-    gap: 15vw;
+    justify-content: space-evenly;
   }
 
   .NavBar-ul {

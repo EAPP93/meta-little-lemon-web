@@ -50,7 +50,7 @@ export default function NavBar () {
         {list.map((el, ifIndex) => {
           return (
             <li key={ifIndex} className={styles['NavBar-li']}>
-              <Link to={`/${el}`} className={styles['NavBar-link']} role='button'>
+              <Link to={`/${el.toLowerCase()}`} className={styles['NavBar-link']} role='button'>
                 {el}
               </Link>
             </li>

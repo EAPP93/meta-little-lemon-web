@@ -13,20 +13,20 @@ export const router = createBrowserRouter([
     errorElement: <NotFound/>
   },
   {
-    path: '/Home',
+    path: '/home',
     element: <HomePage />
   },
   {
-    path: '/Reservations',
+    path: '/reservations',
     element: <BookingPage />,
     errorElement: <NotFound/>
   },
   {
-    path: '/About',
+    path: '/about',
     element: <AboutPage/>
   },
   {
-    path: '/Menu',
+    path: '/menu',
     element: <MenuPage/>
   },
   {

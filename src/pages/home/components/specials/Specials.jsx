@@ -1,8 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styles from './specials.module.css'
 import Dish from '../../../../components/dish/Dish'
 
-export default function Specials ({size}) {
+export default function Specials ({ size }) {
   const dataDishes = [
     {
       name: 'Greek Salad',
@@ -44,4 +45,6 @@ export default function Specials ({size}) {
   )
 }
 
-
+Specials.propTypes = {
+  size: PropTypes.number
+}

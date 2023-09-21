@@ -8,31 +8,23 @@ const prodConfig = {
   module: {
     rules: [
       {
-        test: /\.module\.css$/i,
+        test: /\.css$/,
         use: [
+          'style-loader',
           {
             loader: 'css-loader',
             options: {
-              modules: true,
-              importLoaders: 1
+              importLoaders: 1,
+              modules: true
             }
           }
-        ]
+        ],
+        include: /\.module\.css$/
       },
       {
-        test: /\.css$/i,
-        exclude: /\.module\.css$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              importLoaders: 1,
-              sourceMap: false
-            }
-          }
-        ]
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+        exclude: /\.module\.css$/
       }
     ]
   },

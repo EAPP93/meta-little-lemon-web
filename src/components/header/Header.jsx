@@ -10,9 +10,12 @@ export default function Header () {
 
   const [active, setActive] = useState(false)
 
+  const overflow = document.body.style.getPropertyValue('overflow')
   const isActive = () => {
     setActive(active => !active)
-    document.body.style.overflow = !active ? 'hidden' : 'scroll'
+    overflow === '' && active
+      ? document.body.style.overflow = 'hidden'
+      : document.body.style.overflow = 'scroll'
   }
 
   const LOGO = () => require('../../assets/img/Logo.svg')

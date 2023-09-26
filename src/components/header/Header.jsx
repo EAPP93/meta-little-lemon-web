@@ -13,7 +13,7 @@ export default function Header () {
   const overflow = document.body.style.getPropertyValue('overflow')
   const isActive = () => {
     setActive(active => !active)
-    overflow === '' && active
+    overflow === '' && !active
       ? document.body.style.overflow = 'hidden'
       : document.body.style.overflow = 'scroll'
   }

@@ -9,9 +9,10 @@ export default function Header () {
   const size = useSizeContext()
 
   const [active, setActive] = useState(false)
+
   const isActive = () => {
     setActive(active => !active)
-    document.body.style.overflow = !active ? 'hidden' : ''
+    document.body.style.overflow = !active ? 'hidden' : 'scroll'
   }
 
   const LOGO = () => require('../../assets/img/Logo.svg')

@@ -1,11 +1,10 @@
 import React from 'react'
-import styles from './testimonials.module.css'
+import styles from './customers-say.module.css'
 import Picture from '../../../../components/picture/Picture'
 
 export default function Testimonials () {
   const Start = () => require('../../../../assets/img/start.png')
-
-  const Users = [
+  const Customers = [
     {
       rating: 5,
       name: 'John',
@@ -22,7 +21,7 @@ export default function Testimonials () {
       rating: 4,
       name: 'Jose',
       getImg: () => require('../../../../assets/img/jose-min.jpg'),
-      review: 'buen lugar'
+      review: 'lorem ipsum dolor sit amet consectetur adipisicing elit'
     }
   ]
 
@@ -39,7 +38,7 @@ export default function Testimonials () {
       <h2 className={styles['Testimonials-title']}>Testimonials</h2>
       <div className={styles['Testimonials-container']}>
         {
-          Users.map((el, index) => {
+          Customers.map((el, index) => {
             return (
               <article key={index} className={styles['Testimonials-article']}>
                 <header className={styles['Testimonials-header']}>

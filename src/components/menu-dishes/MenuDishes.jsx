@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './menu-dishes.module.css'
 import Dish from '../../components/dish/Dish'
-export default function MenuDishes ({ style }) {
+export default function MenuDishes ({ style, size }) {
   const DataDishes = [
     {
       name: 'Greek Salad',
@@ -63,7 +63,7 @@ export default function MenuDishes ({ style }) {
     <section className={styles.MenuDishes} style={style}>
       {
         DataDishes.map((dish, index) => {
-          return <Dish key={index} name={dish.name} price={dish.price} about={dish.about} img={dish.getImg}/>
+          return <Dish key={index} name={dish.name} price={dish.price} about={dish.about} size={size} img={dish.getImg}/>
         })
       }
     </section>
@@ -71,5 +71,6 @@ export default function MenuDishes ({ style }) {
 }
 
 MenuDishes.propTypes = {
-  style: PropTypes.object
+  style: PropTypes.object,
+  size: PropTypes.number
 }

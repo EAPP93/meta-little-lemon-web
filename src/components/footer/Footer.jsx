@@ -1,19 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-
 import styles from './footer.module.css'
 import Picture from '../picture'
-export default function Footer () {
-  const img = () => require('../../assets/img/restauran-food-min.png')
+import Nav from '../nav'
+import { useSizeContext } from '../../context/SizeContext'
 
-  const ListMenu = [
-    'Home',
-    'About',
-    'Menu',
-    'Reservations',
-    'Order Online',
-    'Login'
-  ]
+export default function Footer () {
+  const size = useSizeContext()
+  const img = () => require('../../assets/img/restauran-food-min.png')
 
   const DataContact = {
     phone: '+34 666 666 666',
@@ -38,17 +31,9 @@ export default function Footer () {
   return (
     <footer className={styles.Footer}>
       <Picture defaultImage={{ src: img(), alt: 'Image of food of the restaurant Little Lemon' }} list={[]} picture={styles['Footer-picture']} img={styles['Footer-img']} />
-      <ul className={styles['Footer-menu']}>
-        {ListMenu.map((el, index) => {
-          return (
-            <li key={index}>
-              <Link to={`/${el.toLowerCase()}`} role='button' className={styles['Footer-link']}>
-                {el}
-              </Link>
-            </li>
-          )
-        })}
-      </ul>
+      {
+        size > 577 && <Nav/>
+      }
       <section className={styles['Footer-contact']}>
         <h3>Contact</h3>
         <p>{DataContact.phone}</p>

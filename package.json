@@ -25,13 +25,11 @@
   "license": "MIT",
   "dependencies": {
     "formik": "^2.4.3",
-    "html-webpack-plugin": "^5.5.3",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.15.0",
-    "webpack-bundle-analyzer": "^4.9.0",
     "yup": "^1.2.0"
   },
   "devDependencies": {
@@ -48,10 +46,12 @@
     "eslint-plugin-n": "^16.1.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.33.2",
+    "html-webpack-plugin": "^5.5.3",
     "mini-css-extract-plugin": "^2.7.6",
     "style-loader": "^3.3.3",
     "terser-webpack-plugin": "^5.3.9",
     "webpack": "^5.88.2",
+    "webpack-bundle-analyzer": "^4.9.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1",
     "webpack-merge": "^5.9.0"

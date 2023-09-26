@@ -57,6 +57,16 @@
   border-radius: 0.5rem;
 }
 
+.Testimonials-footer {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Testimonials-review {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .Testimonials-rating,
 .Testimonials-name,
 .Testimonials-review {

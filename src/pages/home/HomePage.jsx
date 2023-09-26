@@ -6,7 +6,7 @@ import MenuCategories from './components/menu-categories'
 import About from '../../components/about'
 import MenuDishes from '../../components/menu-dishes/MenuDishes'
 import Specials from './components/specials'
-import Testimonials from './components/testimonials/testimonials'
+import CustomersSay from './components/customers-say/CustomersSay'
 import AboutRestaurant from '../../components/about-restaurant'
 import Footer from '../../components/footer/Footer'
 
@@ -26,24 +26,23 @@ export default function HomePage () {
 
   return (
     <>
-      <Header />
+      <Header size={size} />
       <Main >
         <About />
         {
           size < 577
             ? <>
                 <MenuCategories />
-                <MenuDishes />
+                <MenuDishes size={size} />
               </>
             : <>
               <Specials size={size} />
-              <Testimonials />
+              <CustomersSay />
               <AboutRestaurant />
             </>
         }
       </Main>
-
-      {size > 576 && <Footer />}
+      <Footer size={size} />
     </>
   )
 }

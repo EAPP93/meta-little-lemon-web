@@ -32,7 +32,7 @@ export default function Footer () {
     <footer className={styles.Footer}>
       <Picture defaultImage={{ src: img(), alt: 'Image of food of the restaurant Little Lemon' }} list={[]} picture={styles['Footer-picture']} img={styles['Footer-img']} />
       {
-        size > 577 && <Nav/>
+        size > 577 && <Nav nav={styles['Footer-menu']} link={styles['Footer-link']}/>
       }
       <section className={styles['Footer-contact']}>
         <h3>Contact</h3>

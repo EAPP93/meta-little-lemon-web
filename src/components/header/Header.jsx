@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './header.module.css'
 import HamburgerMenu from '../hamburger-menu'
 import Nav from '../nav'
@@ -14,7 +14,13 @@ export default function Header () {
     setActive(active => !active)
   }
 
-  document.body.style.overflow = active ? 'hidden' : 'auto'
+  useEffect(() => {
+    document.body.style.overflow = active ? 'hidden' : 'auto'
+
+    return () => {
+      document.body.style.overflow = 'auto'
+    }
+  }, [active])
 
   const LOGO = () => require('../../assets/img/Logo.svg')
   const Carrito = () => require('../../assets/img/Basket.svg')

@@ -3,11 +3,11 @@ import React, { useState, useEffect } from 'react'
 import Header from '../../components/header'
 import Main from '../../components/main'
 import MenuCategories from './components/menu-categories'
-import About from '../../components/about'
+import CallToAction from '../../components/call-to-action'
 import MenuDishes from '../../components/menu-dishes/MenuDishes'
 import Specials from './components/specials'
 import CustomersSay from './components/customers-say/CustomersSay'
-import AboutRestaurant from '../../components/about-restaurant'
+import Chicago from '../../components/chicago'
 import Footer from '../../components/footer/Footer'
 
 export default function HomePage () {
@@ -28,7 +28,7 @@ export default function HomePage () {
     <>
       <Header size={size} />
       <Main >
-        <About />
+        <CallToAction />
         {
           size < 577
             ? <>
@@ -38,7 +38,7 @@ export default function HomePage () {
             : <>
               <Specials size={size} />
               <CustomersSay />
-              <AboutRestaurant />
+              <Chicago />
             </>
         }
       </Main>

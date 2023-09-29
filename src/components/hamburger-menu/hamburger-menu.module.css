@@ -4,9 +4,8 @@
   width: 2.5rem;
   height: 2.5rem;
   position: relative;
-  overflow: hidden;
-  z-index: 3;
   cursor: pointer;
+  z-index: 3;
 }
 
 

@@ -1,6 +1,6 @@
 @import url('../../styles/variables.module.css');
 
-.AboutRestaurant {
+.Chicago {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,68 +8,68 @@
   gap: 1rem;
 }
 
-.AboutRestaurant-title,
-.AboutRestaurant-subtitle {
+.Chicago-title,
+.Chicago-subtitle {
   font-family: var(--font-title);
   color: var(--color-highlight-b);
   line-height: var(--font-size-subtitle);
 }
 
-.AboutRestaurant-title {
+.Chicago-title {
   font-size: var(--font-size-title);
 }
 
-.AboutRestaurant-subtitle {
+.Chicago-subtitle {
   font-size: var(--font-size-subtitle);
   margin-bottom: 1rem;
 }
 
-.AboutRestaurant-about {
+.Chicago-about {
   width: 50%;
 }
 
-.AboutRestaurant-images {
+.Chicago-images {
   position: relative;
   display: flex;
   width: calc(18rem + 3.5vw);
   height: calc(18rem + 3.5vw);
 }
 
-.AboutRestaurant-picture {
+.Chicago-picture {
   width: 60%;
   height: 75%;
 }
 
-.AboutRestaurant-img {
+.Chicago-img {
   border-radius: 0.25rem;
 }
 
-.AboutRestaurant-picture:nth-child(1) {
+.Chicago-picture:nth-child(1) {
   position: absolute;
   left: 0;
   bottom: 0;
 }
 
-.AboutRestaurant-picture:nth-child(2) {
+.Chicago-picture:nth-child(2) {
   position: absolute;
   right: 0;
   top: 0;
 }
 
 @media screen and (min-width: 577px) {
-  .AboutRestaurant {
+  .Chicago {
     padding: 2.5vw 5vw;
   }
 }
 
 @media screen and (min-width: 769px) {
-  .AboutRestaurant {
+  .Chicago {
     padding: 2.5vw 15vw;
   }
 }
 
 @media screen and (min-width: 1201px) {
-  .AboutRestaurant {
+  .Chicago {
     padding: 3.5vw 22.5vw;
   }
 }

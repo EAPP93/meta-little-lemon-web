@@ -2,17 +2,16 @@ import React from 'react'
 import Header from '../../components/header'
 import Main from '../../components/main'
 import Footer from '../../components/footer'
-import About from '../../components/about'
-import AboutRestaurant from '../../components/about-restaurant'
+import CallToAction from '../../components/call-to-action'
+import Chicago from '../../components/chicago'
 
 export default function AboutPage () {
   return (
     <>
       <Header />
       <Main>
-        <About />
-        <AboutRestaurant />
-
+        <CallToAction/>
+        <Chicago />
         </Main>
       <Footer />
     </>

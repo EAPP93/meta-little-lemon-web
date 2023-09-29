@@ -9,10 +9,12 @@ export default function Header () {
   const size = useSizeContext()
 
   const [active, setActive] = useState(false)
-  document.body.style.overflow = active ? 'hidden' : 'scroll'
+
   const isActive = () => {
     setActive(active => !active)
   }
+
+  document.body.style.overflow = active ? 'hidden' : 'auto'
 
   const LOGO = () => require('../../assets/img/Logo.svg')
   const Carrito = () => require('../../assets/img/Basket.svg')
@@ -23,10 +25,10 @@ export default function Header () {
       {size < 577 && <HamburgerMenu active={active} isActive={isActive}/>}
 
       {/* Logo Little Lemon */}
-      <Picture defaultImage={{ src: LOGO(), alt: 'Logo Little Lemon' }} list={[]} picture={styles['Header-picture']} img={styles['Header-img']} />
+      <Picture defaultImage={{ src: LOGO(), alt: 'Logo Little Lemon' }} list={[]} picture={styles['Header-logo']} img={styles['Header-img']} />
 
       {/* Menu links */}
-      <Nav nav={!active ? styles['Header-nav'] : `${styles['Header-nav']} ${styles['u-animation']}`} link={styles['Header-link']} />
+      <Nav nav={!active ? styles['Header-nav'] : `${styles['Header-nav']} ${styles['is-active']}`} link={styles['Header-link']} />
 
       {/* imagen carrito de compras */}
       {size < 577 && <Picture defaultImage={{ src: Carrito(), alt: 'Carrito de compras' }} list={[]} img={styles['Header-cartImg']} />}

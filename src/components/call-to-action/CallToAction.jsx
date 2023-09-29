@@ -1,15 +1,15 @@
 import React from 'react'
-import styles from './about.module.css'
-import Picture from '../../components/picture/Picture'
+import styles from './call-to-action.module.css'
+import Picture from '../picture/Picture'
 import { Link } from 'react-router-dom'
 
-export default function About () {
+export default function CallToAction () {
   const AboutImage = () => require('../../assets/img/restauran-food-min.png')
   return (
     <article className={styles.Article}>
         <header className={styles['Article-header']}>
           <h1 className={styles['Article-title']}>Little Lemon</h1>
-          <h2 className={styles['Article-subtitle']}>Madrid</h2>
+          <h2 className={styles['Article-subtitle']}>Chicago</h2>
         </header>
         <main className={styles['Article-main']}>
           <p className={styles['Article-text']}>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>

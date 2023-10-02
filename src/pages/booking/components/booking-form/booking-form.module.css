@@ -1,0 +1,9 @@
+.BookingForm {
+  display: grid;
+  gap: 1rem;
+}
+
+label {
+  margin: 0;
+  padding: o;
+}

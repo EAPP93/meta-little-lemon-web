@@ -1,5 +1,3 @@
-@import url('../../../../styles/variables.module.css');
-
 .Testimonials {
   background-color: var(--color--primary-green);
   padding: 1.5rem 1rem;

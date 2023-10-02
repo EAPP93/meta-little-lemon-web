@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 export default function Picture ({ defaultImage = { src: '#', alt: '' }, list = [{ type: 'image/jpeg', srcSet: '#', sizes: '', alt: '' }], picture, img }) {
   return (
-    <picture role='img' className={picture} >
+    <picture role='picture' className={picture} >
       {
         list.map((el, index) => {
           return <source key={index}
@@ -12,7 +12,7 @@ export default function Picture ({ defaultImage = { src: '#', alt: '' }, list = 
           />
         })
       }
-      <img loading='lazy' src={defaultImage.src} alt={defaultImage.alt} className={img} />
+      <img role='img' loading='lazy' src={defaultImage.src} alt={defaultImage.alt} className={img} />
    </picture>
   )
 }

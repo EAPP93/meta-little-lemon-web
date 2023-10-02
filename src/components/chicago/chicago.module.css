@@ -1,5 +1,3 @@
-@import url('../../styles/variables.module.css');
-
 .Chicago {
   display: flex;
   flex-direction: column;

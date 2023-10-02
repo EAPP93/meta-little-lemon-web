@@ -1,5 +1,3 @@
-@import url('../../styles/variables.module.css');
-
 .Footer {
   background-color: var(--color--primary-green);
   display: flex;

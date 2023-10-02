@@ -1,24 +1,14 @@
-import React, { useState, createContext, useContext } from 'react'
+import React, { createContext } from 'react'
 import PropTypes from 'prop-types'
-
-const Context = createContext('null')
-
-export function UserContext ({ children }) {
-  const [log, setLog] = useState(false)
-  const logging = () => {
-    setLog(!log)
-  }
+const UserContext = createContext(null)
+export default function UserProvider ({ children }) {
   return (
-    <Context.Provider value={{ log, logging }}>
+    <UserContext.Provider>
       {children}
-    </Context.Provider>
+    </UserContext.Provider>
   )
 }
 
-UserContext.propTypes = {
-  children: PropTypes.node
-}
-
-export const useUserContext = () => {
-  return useContext(Context)
+UserProvider.propTypes = {
+  children: PropTypes.any
 }

@@ -13,7 +13,7 @@ export default function CallToAction () {
         </header>
         <main className={styles['Article-main']}>
           <p className={styles['Article-text']}>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
-          <Picture role='img' defaultImage={{ src: AboutImage(), alt: 'Image of food of the restaurant Little Lemon' }} list={[]} picture={styles['Article-picture']} img={styles['Article-img']}/>
+          <Picture defaultImage={{ src: AboutImage(), alt: 'Image of food of the restaurant Little Lemon' }} list={[]} picture={styles['Article-picture']} img={styles['Article-img']}/>
         </main>
         <footer className={styles['Article-footer']}>
           <Link className={styles['Article-link']} role='button' to='/booking'>Reserve a table</Link>

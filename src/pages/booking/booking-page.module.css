@@ -1,0 +1,53 @@
+.BookingPage {
+  background-color: var(--color--primary-green);
+  padding: 1rem 1.125rem;
+}
+
+.BookingPage-title {
+  margin: 0 0 -2.5rem 0;
+  font-family: var(--font-title);
+  font-size: var(--font-size-title);
+  color: var(--color--primary-yellow);
+}
+
+.BookingPage-subtitle,
+.BookingPage-text {
+  font-family: var(--font-title);
+  font-size: var(--font-size-subtitle);
+  color: var(--color-highlight-w);
+  padding: 1rem 0;
+}
+
+.BookingPage-images {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.BookingPage-picture {
+  width: 50%;
+  height: 10rem;
+}
+
+.BookingPage-text {
+  text-align: center;
+}
+
+
+@media screen and (min-width: 577px) {
+  .BookingPage {
+    padding: 1.5vw 5vw;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .BookingPage {
+    padding: 1.5vw 15vw;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .BookingPage {
+    padding: 1.5vw 22.5vw;
+  }
+}

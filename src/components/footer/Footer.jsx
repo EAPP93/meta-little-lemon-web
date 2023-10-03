@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './footer.module.css'
 import Picture from '../picture'
 import Nav from '../nav'
-import { useSizeContext } from '../../context/SizeContext'
+import { useSizeContext } from '../../context/SizeProvider'
 
 export default function Footer () {
   const size = useSizeContext()

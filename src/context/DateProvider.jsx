@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useReducer } from 'react'
 import PropTypes from 'prop-types'
+import { fetchAPI } from '../api/index'
 
 // creamos contexto
 const DateContext = createContext(null)
@@ -15,17 +16,24 @@ const actions = {
   UPDATE_TIMES: 'UPDATE_TIMES'
 }
 
+const initializeTimes = (date) => {
+  return fetchAPI(date)
+}
+
+const updateTimes = (date) => {
+  return fetchAPI(date)
+}
+
 // reducer para manejar las acciones
 const Reducer = (state, action) => {
   switch (action.type) {
     case actions.INITIALIZE_TIMES:
       return {
-        availableTimes: action.payload
+        availableTimes: initializeTimes(action.payload)
       }
     case actions.UPDATE_TIMES:
       return {
-        ...state,
-        availableTimes: [...state.availableTimes, action.payload]
+        availableTimes: updateTimes(action.payload)
       }
     default:
       return state

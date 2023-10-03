@@ -11,16 +11,18 @@ const initialState = {
 
 // definimos las acciones para el dispatch
 const actions = {
-  initializeTimes: 'INITIALIZE',
-  updateTimes: 'UPDATE'
+  INITIALIZE_TIMES: 'INITIALIZE_TIMES',
+  UPDATE_TIMES: 'UPDATE_TIMES'
 }
 
 // reducer para manejar las acciones
-const updateReducer = (state, action) => {
+const Reducer = (state, action) => {
   switch (action.type) {
-    case actions.initializeTimes:
-      return state
-    case actions.updateTimes:
+    case actions.INITIALIZE_TIMES:
+      return {
+        availableTimes: action.payload
+      }
+    case actions.UPDATE_TIMES:
       return {
         ...state,
         availableTimes: [...state.availableTimes, action.payload]
@@ -30,7 +32,7 @@ const updateReducer = (state, action) => {
   }
 }
 export function DateProvider ({ children }) {
-  const [state, dispatch] = useReducer(updateReducer, initialState)
+  const [state, dispatch] = useReducer(Reducer, initialState)
 
   return (
     <DateContext.Provider value={{ state, dispatch }}>

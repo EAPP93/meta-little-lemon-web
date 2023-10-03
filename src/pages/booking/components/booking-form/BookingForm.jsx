@@ -1,17 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import styles from './booking-form.module.css'
-
+import { useDateContext } from '../../../../context/DateProvider.jsx'
 export default function BookingForm () {
-  const [availableTimes, setAvailableTimes] = useState([])
-  const [occupiedDates, setOccupiedDates] = useState(['2023-10-19'])
-
-  useEffect(() => {
-    const arr = ['17:00', '18:00', '19:00', '20:00']
-    setAvailableTimes(arr)
-    setOccupiedDates()
-  }, [])
+  const { state } = useDateContext()
 
   const formik = useFormik({
     initialValues: {
@@ -21,8 +14,7 @@ export default function BookingForm () {
       occasion: 'Birthday'
     },
     validationSchema: Yup.object({
-      date: Yup.date().required('Date is required')
-        .notOneOf(occupiedDates, 'This date is already occupied'),
+      date: Yup.date().required('Date is required'),
       time: Yup.string().required('Time is required'),
       Diners: Yup.number()
         .min(1, 'Minimum of 1 guest')
@@ -58,7 +50,7 @@ export default function BookingForm () {
         onChange={formik.handleChange}
         value={formik.values.time}
       >
-      { availableTimes.map(time => <option key={time}>{time}</option>) }
+      { state.availableTimes.map(time => <option key={time}>{time}</option>) }
       </select>
       {
         formik.touched.time && formik.errors.time

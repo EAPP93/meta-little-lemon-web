@@ -19,8 +19,8 @@ export default function Chicago () {
         </p>
       </div>
       <div className={styles['Chicago-images']} >
-        <Picture defaultImage={{ src: img2() }} list={['']} picture={styles['Chicago-picture']} img={styles['Chicago-img']}/>
-        <Picture defaultImage={{ src: img1() }} list={['']} picture={styles['Chicago-picture']} img={styles['Chicago-img']}/>
+        <Picture defaultImage={{ src: img2(), alt: 'image of cook' }} list={[]} picture={styles['Chicago-picture']} img={styles['Chicago-img']}/>
+        <Picture defaultImage={{ src: img1(), alt: 'image of restaurant' }} list={[]} picture={styles['Chicago-picture']} img={styles['Chicago-img']}/>
       </div>
     </section>
   )

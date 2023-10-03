@@ -10,6 +10,7 @@ export default function BookingForm () {
   useEffect(() => {
     const arr = ['17:00', '18:00', '19:00', '20:00']
     setAvailableTimes(arr)
+    setOccupiedDates()
   }, [])
 
   const formik = useFormik({
@@ -20,7 +21,8 @@ export default function BookingForm () {
       occasion: 'Birthday'
     },
     validationSchema: Yup.object({
-      date: Yup.date().required('Date is required').notOneOf(occupiedDates, 'This date is already occupied'),
+      date: Yup.date().required('Date is required')
+        .notOneOf(occupiedDates, 'This date is already occupied'),
       time: Yup.string().required('Time is required'),
       Diners: Yup.number()
         .min(1, 'Minimum of 1 guest')

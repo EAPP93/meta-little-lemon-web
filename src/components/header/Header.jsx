@@ -3,7 +3,7 @@ import styles from './header.module.css'
 import HamburgerMenu from '../hamburger-menu'
 import Nav from '../nav'
 import Picture from '../picture'
-import { useSizeContext } from '../../context/SizeContext'
+import { useSizeContext } from '../../context/SizeProvider'
 
 export default function Header () {
   const size = useSizeContext()

@@ -6,7 +6,7 @@ const DateContext = createContext(null)
 
 // definimos estado inicial
 const initialState = {
-  availableTimes: ['17:00', '18:00', '19:00', '20:00']
+  availableTimes: []
 }
 
 // definimos las acciones para el dispatch

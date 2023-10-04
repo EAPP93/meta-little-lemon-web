@@ -43,8 +43,11 @@
 
 .NotFound-link {
   padding: 2rem 8rem;
+  color: var(--color-highlight-b);
   background-color: var(--color--primary-yellow);
   justify-self: start;
   align-self: center;
   border-radius: 1rem;
+  font-family: var(--font-text);
+  font-size: var(--font-size-text);
 }

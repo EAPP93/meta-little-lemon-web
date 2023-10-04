@@ -1,7 +1,7 @@
 @import '../../styles/variables.module.css';
 
 .Menu {
-  height: 90vh;
+  max-height: 90vh;
   overflow: hidden;
 }
 
@@ -21,4 +21,22 @@
   font-family: var(--font-text);
   font-size: var(--font-size-text);
   color: var(--color-secondary-2);
+}
+
+@media screen and (min-width: 577px) {
+  .Menu-article {
+    padding: 1.5vw 5vw;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .Menu-article {
+    padding: 2vw 15vw;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .Menu-article {
+    padding: 2.5vw 22.5vw;
+  }
 }

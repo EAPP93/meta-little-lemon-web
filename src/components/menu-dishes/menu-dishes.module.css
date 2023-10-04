@@ -5,4 +5,30 @@
   padding: 0 1rem;
   height: 20rem;
   overflow-y: scroll;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 577px) {
+  .MenuDishes {
+    padding: 1.5vw 5vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .MenuDishes {
+    padding: 2vw 15vw;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .MenuDishes {
+    padding: 2.5vw 22.5vw;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
 }

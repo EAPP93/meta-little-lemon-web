@@ -5,6 +5,7 @@ import NotFound from '../pages/not-found'
 import BookingPage from '../pages/booking/BookingPage '
 import AboutPage from '../pages/about'
 import MenuPage from '../pages/menu/MenuPage'
+import ShoppingPage from '../pages/shop/ShoppingPage'
 
 export const router = createBrowserRouter([
   {
@@ -14,11 +15,13 @@ export const router = createBrowserRouter([
   },
   {
     path: '/about',
-    element: <AboutPage/>
+    element: <AboutPage />,
+    errorElement: <NotFound/>
   },
   {
     path: '/menu',
-    element: <MenuPage/>
+    element: <MenuPage />,
+    errorElement: <NotFound/>
   },
   {
     path: '/booking',
@@ -26,6 +29,8 @@ export const router = createBrowserRouter([
     errorElement: <NotFound/>
   },
   {
-    path: '/cart'
+    path: '/cart',
+    element: <ShoppingPage />,
+    errorElement: <NotFound/>
   }
 ])

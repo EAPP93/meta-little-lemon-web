@@ -1,0 +1,36 @@
+.NotFound {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color--primary-green);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.NotFound-container {
+  width: calc(10rem + 10vw);
+  height: calc(10rem + 10vw);
+  background-color: var(--color-highlight-w);
+  display: flex;
+  align-items: center;
+}
+
+.NotFound-container:nth-child(1) {
+  border-radius: 50% 0 0 50%;
+  justify-content: end;
+  padding-right: 1rem;
+}
+
+.NotFound-container:nth-child(2) {
+  padding-left: 1rem;
+  justify-content: start;
+  border-radius: 0 50% 50% 0;
+}
+
+.NotFound-title {
+  font-family: var(--font-title);
+  font-size: var(--font-size-subtitle);
+  color: var(--color--primary-yellow);
+  line-height: var(--font-line-height);
+}

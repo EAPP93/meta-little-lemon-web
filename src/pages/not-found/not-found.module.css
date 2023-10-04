@@ -3,14 +3,20 @@
   height: 100vh;
   background-color: var(--color--primary-green);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 4rem;
+}
+
+.NotFound-section {
+  display: flex;
   gap: 2rem;
 }
 
 .NotFound-container {
-  width: calc(10rem + 10vw);
-  height: calc(10rem + 10vw);
+  width: calc(10rem + 5vw);
+  height: calc(10rem + 5vw);
   background-color: var(--color-highlight-w);
   display: flex;
   align-items: center;
@@ -33,4 +39,12 @@
   font-size: var(--font-size-subtitle);
   color: var(--color--primary-yellow);
   line-height: var(--font-line-height);
+}
+
+.NotFound-link {
+  padding: 2rem 8rem;
+  background-color: var(--color--primary-yellow);
+  justify-self: start;
+  align-self: center;
+  border-radius: 1rem;
 }

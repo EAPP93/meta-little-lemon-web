@@ -32,7 +32,8 @@ export default function BookingForm () {
         .min(1, 'Minimum of 1 guest')
         .max(10, 'Maximum of 10 guests')
         .required('Number of guests is required'),
-      occasion: Yup.string().required('Occasion is required')
+      occasion: Yup.string().required('Occasion is required'),
+      seating: Yup.string().required('Occasion is required')
     }),
     onSubmit: values => {
       alert(JSON.stringify(values, null, 2))
@@ -41,71 +42,111 @@ export default function BookingForm () {
 
   return (
     <form className={styles.BookingForm} onSubmit={formik.handleSubmit} >
-      <label htmlFor="date">Date</label>
-      <input
-        type="date"
-        id="date"
-        name="date"
-        onChange={(event) => {
-          handleDateChange(event)
-          formik.handleChange(event)
-        }}
-        value={formik.values.date}
-      />
-      {
-        formik.touched.date && formik.errors.date
-          ? (<div>{formik.errors.date}</div>)
-          : null
-      }
+      <fieldset className={styles['BookingForm-container']}>
+        <label className={styles['BookingForm-label']} htmlFor="date">Date: </label>
+        <input
+          className={styles['BookingForm-input']}
+          type="date"
+          id="date"
+          name="date"
+          placeholder='Date'
+          onChange={(event) => {
+            handleDateChange(event)
+            formik.handleChange(event)
+          }}
+          value={formik.values.date}
+        />
+        {
+          formik.touched.date && formik.errors.date
+            ? (<div>{formik.errors.date}</div>)
+            : null
+        }
+      </fieldset>
 
-      <label htmlFor="time">Time</label>
-      <select
-        id="time"
-        name="time"
-        onChange={formik.handleChange}
-        value={formik.values.time}
-      >
-      { state.availableTimes.map(time => <option key={time}>{time}</option>) }
-      </select>
-      {
-        formik.touched.time && formik.errors.time
-          ? (<div>{formik.errors.time}</div>)
-          : null
-      }
+      <fieldset className={styles['BookingForm-container']}>
+        <label className={styles['BookingForm-label']} htmlFor="time">Time</label>
+        <select
+          className={styles['BookingForm-input']}
+          id="time"
+          name="time"
+          onChange={formik.handleChange}
+          value={formik.values.time}
+        >
+          {state.availableTimes.map(time => <option key={time}>{time}</option>)}
+        </select>
+        {
+          formik.touched.time && formik.errors.time
+            ? (<div>{formik.errors.time}</div>)
+            : null
+        }
+      </fieldset>
 
-      <label htmlFor="Diners">Number of Diners</label>
-      <input
-        type="number"
-        id="Diners"
-        name="Diners"
-        min="1"
-        max="10"
-        onChange={formik.handleChange}
-        value={formik.values.Diners}
-      />
-      {
-        formik.touched.Diners && formik.errors.Diners
-          ? (<div>{formik.errors.Diners}</div>)
-          : null
-      }
+      <fieldset className={styles['BookingForm-container']}>
+        <label className={styles['BookingForm-label']} htmlFor="Diners">Diners</label>
+        <input
+          className={styles['BookingForm-input']}
+          type="number"
+          id="Diners"
+          name="Diners"
+          onChange={formik.handleChange}
+          value={formik.values.Diners}
+        />
+        {
+          formik.touched.Diners && formik.errors.Diners
+            ? (<div>{formik.errors.Diners}</div>)
+            : null
+        }
+      </fieldset>
 
-      <label htmlFor="occasion">Occasion</label>
-      <select
-        id="occasion"
-        name="occasion"
-        onChange={formik.handleChange}
-        value={formik.values.occasion}
-      >
-        <option>Birthday</option>
-        <option>Anniversary</option>
-      </select>
-      {
-        formik.touched.occasion && formik.errors.occasion
-          ? (<div>{formik.errors.occasion}</div>)
-          : null
-      }
+      <fieldset className={styles['BookingForm-container']}>
+        <label className={styles['BookingForm-label']} htmlFor="occasion">Occasion</label>
+        <select
+          className={styles['BookingForm-input']}
+          id="occasion"
+          name="occasion"
+          onChange={formik.handleChange}
+          value={formik.values.occasion}
+        >
+          <option>Birthday</option>
+          <option>Anniversary</option>
+          <option>Others</option>
+        </select>
+        {
+          formik.touched.occasion && formik.errors.occasion
+            ? (<div>{formik.errors.occasion}</div>)
+            : null
+        }
+      </fieldset>
 
-      <input type="submit" value="Make Your Reservation" />
+      <fieldset className={styles['BookingForm-radio']}>
+        <legend className={styles['BookingForm-legend']}>Seating Options</legend>
+        <section className={styles['BookingForm-section']}>
+          <label className={styles['BookingForm-labelRadio']}>
+            Standar options
+            <input
+              className={styles['BookingForm-inputRadio']}
+              type="radio"
+              name="seating"
+              value="standard"
+              onChange={formik.handleChange}
+              checked={formik.values.seating === 'standard'}
+            />
+          </label>
+          <label className={styles['BookingForm-labelRadio']}>
+            Outside
+            <input
+              className={styles['BookingForm-inputRadio']}
+              type="radio"
+              name="seating"
+              value="outside"
+              onChange={formik.handleChange}
+              checked={formik.values.seating === 'outside'}
+            />
+          </label>
+        </section>
+      </fieldset>
+
+      <input className={styles['BookingForm-btn']} type="submit" value="Make Your Reservation" />
     </form>
   )
 }

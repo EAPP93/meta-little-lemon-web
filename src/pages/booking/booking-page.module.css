@@ -31,6 +31,7 @@
 
 .BookingPage-text {
   text-align: center;
+  margin: 0.75rem 0 1.25rem 0;
 }
 
 
@@ -44,10 +45,18 @@
   .BookingPage {
     padding: 1.5vw 15vw;
   }
+
+  .BookingPage-picture {
+    height: 15rem;
+  }
 }
 
 @media screen and (min-width: 1201px) {
   .BookingPage {
     padding: 1.5vw 22.5vw;
+  }
+
+  .BookingPage-picture {
+    height: 20rem;
   }
 }

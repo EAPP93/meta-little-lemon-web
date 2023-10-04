@@ -16,24 +16,16 @@ const actions = {
   UPDATE_TIMES: 'UPDATE_TIMES'
 }
 
-const initializeTimes = (date) => {
-  return fetchAPI(date)
-}
-
-const updateTimes = (date) => {
-  return fetchAPI(date)
-}
-
 // reducer para manejar las acciones
 const Reducer = (state, action) => {
   switch (action.type) {
     case actions.INITIALIZE_TIMES:
       return {
-        availableTimes: initializeTimes(action.payload)
+        availableTimes: fetchAPI(action.payload)
       }
     case actions.UPDATE_TIMES:
       return {
-        availableTimes: updateTimes(action.payload)
+        availableTimes: fetchAPI(action.payload)
       }
     default:
       return state

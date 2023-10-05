@@ -1,6 +1,9 @@
 // variables para guardar los cálculos ya realizados
 const dates = []
 
+// variable de los horarios para reservar
+const times = ['08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00']
+
 export const fetchAPI = (date) => {
   /* verifico si la fecha ya ha pasado */
   /********************************************/
@@ -25,8 +28,7 @@ export const fetchAPI = (date) => {
 
   /* genero horarios random */
   /********************************************/
-  // variable de los horarios para reservar
-  const times = ['08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00']
+
   // numero aleatorio de horas disponibles
   const randomN = (Math.random() * 8).toFixed()
   // funcion para obtener un numero random y utilizarlo como index para agregar horarios
@@ -43,4 +45,25 @@ export const fetchAPI = (date) => {
   // guardamos los resultados por si se vuelve a consultar
   dates.push({ day: targetDate, times: res })
   return res
+}
+
+export const submitAPI = (formData) => {
+  const data = JSON.parse(formData)
+
+  if (typeof data.date !== 'string') return false
+
+  if (typeof data.time !== 'string') return false
+  const bol = times.map(el => el === data.time)
+  if (bol === false) return false
+
+  if (typeof data.diners !== 'number') return false
+  if (data.diners < 1 && data.diners > 10) return false
+
+  if (typeof data.occasion !== 'string') return false
+  if (!(data.occasion === 'Birthday' || data.occasion === 'Anniversary' || data.occasion === 'Others')) return false
+
+  if (typeof data.seating !== 'string') return false
+  if (!(data.seating === 'standard' || data.seating === 'outside')) return false
+
+  return true
 }

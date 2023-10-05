@@ -1,42 +1,33 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
+import PropTypes from 'prop-types'
 import styles from './booking-form.module.css'
-import { useDateContext } from '../../../../context/DateProvider.jsx'
-export default function BookingForm () {
-  const { state, dispatch } = useDateContext()
-  const dateRef = useRef()
-
-  dateRef.current = new Date().toLocaleDateString
-
+export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
   useEffect(() => {
-    dispatch({ type: 'INITIALIZE_TIMES', payload: dateRef })
+    dispatch({ type: 'INITIALIZE_TIMES', payload: new Date().toLocaleDateString })
   }, [])
-
-  const handleDateChange = event => {
-    dispatch({ type: 'INITIALIZE_TIMES', payload: event.target.value })
-    dateRef.current = event.target.value
-  }
 
   const formik = useFormik({
     initialValues: {
       date: '',
       time: '',
-      Diners: 1,
+      diners: 1,
       occasion: 'Birthday'
     },
     validationSchema: Yup.object({
       date: Yup.date().required('Date is required'),
       time: Yup.string().required('Time is required'),
-      Diners: Yup.number()
+      diners: Yup.number()
         .min(1, 'Minimum of 1 guest')
         .max(10, 'Maximum of 10 guests')
         .required('Number of guests is required'),
       occasion: Yup.string().required('Occasion is required'),
-      seating: Yup.string().required('Occasion is required')
+      seating: Yup.string().required('Seating is required')
     }),
     onSubmit: values => {
       alert(JSON.stringify(values, null, 2))
+      submitForm(JSON.stringify(values, null, 2))
     }
   })
 
@@ -50,15 +41,16 @@ export default function BookingForm () {
           id="date"
           name="date"
           placeholder='Date'
+          onBlur={formik.handleBlur}
           onChange={(event) => {
-            handleDateChange(event)
+            dispatch({ type: 'UPDATE_TIMES', payload: event.target.value })
             formik.handleChange(event)
           }}
           value={formik.values.date}
         />
         {
           formik.touched.date && formik.errors.date
-            ? (<div>{formik.errors.date}</div>)
+            ? (<div className={styles['BookingForm-error']}>{formik.errors.date}</div>)
             : null
         }
       </fieldset>
@@ -69,31 +61,33 @@ export default function BookingForm () {
           className={styles['BookingForm-input']}
           id="time"
           name="time"
+          onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.time}
         >
-          {state.availableTimes.map(time => <option key={time}>{time}</option>)}
+          {availableTimes.map(time => <option key={time}>{time}</option>)}
         </select>
         {
           formik.touched.time && formik.errors.time
-            ? (<div>{formik.errors.time}</div>)
+            ? (<div className={styles['BookingForm-error']}>{formik.errors.time}</div>)
             : null
         }
       </fieldset>
 
       <fieldset className={styles['BookingForm-container']}>
-        <label className={styles['BookingForm-label']} htmlFor="Diners">Diners</label>
+        <label className={styles['BookingForm-label']} htmlFor="diners">Diners</label>
         <input
           className={styles['BookingForm-input']}
           type="number"
-          id="Diners"
-          name="Diners"
+          id="diners"
+          name="diners"
+          onBlur={formik.handleBlur}
           onChange={formik.handleChange}
-          value={formik.values.Diners}
+          value={formik.values.diners}
         />
         {
-          formik.touched.Diners && formik.errors.Diners
-            ? (<div>{formik.errors.Diners}</div>)
+          formik.touched.diners && formik.errors.diners
+            ? (<div className={styles['BookingForm-error']}>{formik.errors.diners}</div>)
             : null
         }
       </fieldset>
@@ -104,6 +98,7 @@ export default function BookingForm () {
           className={styles['BookingForm-input']}
           id="occasion"
           name="occasion"
+          onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.occasion}
         >
@@ -113,7 +108,7 @@ export default function BookingForm () {
         </select>
         {
           formik.touched.occasion && formik.errors.occasion
-            ? (<div>{formik.errors.occasion}</div>)
+            ? (<div className={styles['BookingForm-error']}>{formik.errors.occasion}</div>)
             : null
         }
       </fieldset>
@@ -126,8 +121,10 @@ export default function BookingForm () {
             <input
               className={styles['BookingForm-inputRadio']}
               type="radio"
+              id="seating"
               name="seating"
               value="standard"
+              onBlur={formik.handleBlur}
               onChange={formik.handleChange}
               checked={formik.values.seating === 'standard'}
             />
@@ -137,16 +134,30 @@ export default function BookingForm () {
             <input
               className={styles['BookingForm-inputRadio']}
               type="radio"
+              id="seating"
               name="seating"
               value="outside"
+              onBlur={formik.handleBlur}
               onChange={formik.handleChange}
               checked={formik.values.seating === 'outside'}
             />
           </label>
         </section>
+        {
+          formik.touched.seating && formik.errors.seating
+            ? (<div className={styles['BookingForm-error']}>{formik.errors.seating}</div>)
+            : null
+        }
+
       </fieldset>
 
       <input className={styles['BookingForm-btn']} type="submit" value="Make Your Reservation" />
     </form>
   )
+}
+
+BookingForm.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  availableTimes: PropTypes.arrayOf(PropTypes.string).isRequired,
+  submitForm: PropTypes.func.isRequired
 }

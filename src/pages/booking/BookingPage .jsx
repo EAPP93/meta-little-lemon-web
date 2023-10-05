@@ -4,10 +4,19 @@ import Footer from '../../components/footer'
 import Picture from '../../components/picture'
 import BookingForm from './components/booking-form/BookingForm'
 import styles from './booking-page.module.css'
+import { useDateContext } from '../../context/DateProvider'
+import { submitAPI } from '../../api'
 
 export default function BookingPage () {
   const restaurant = () => require('../../assets/img/restaurant.jpg')
   const cook = () => require('../../assets/img/cooker-min.png')
+
+  const { state, dispatch } = useDateContext()
+
+  const submitForm = (data) => {
+    console.log(submitAPI(data))
+  }
+
   return (
     <>
       <Header />
@@ -19,7 +28,7 @@ export default function BookingPage () {
           <Picture defaultImage={ { src: cook(), alt: 'image of restaurant' }} list={[]} picture={styles['BookingPage-picture']} />
         </section>
         <p className={styles['BookingPage-text']}>Find a table fon any occasion</p>
-        <BookingForm />
+        <BookingForm dispatch={dispatch} availableTimes={ state.availableTimes } submitForm={submitForm} />
       </main>
       <Footer />
     </>

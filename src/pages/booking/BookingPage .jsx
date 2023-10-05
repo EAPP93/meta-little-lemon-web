@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import Header from '../../components/header'
+import Main from '../../components/main'
 import Footer from '../../components/footer'
 import Picture from '../../components/picture'
 import BookingForm from './components/booking-form/BookingForm'
@@ -24,7 +25,7 @@ export default function BookingPage () {
   return (
     <>
       <Header />
-      <main className={styles.BookingPage}>
+      <Main style={styles.BookingPage}>
         <h1 className={styles['BookingPage-title']}>Little Lemon</h1>
         <h2 className={styles['BookingPage-subtitle']}>Chicago</h2>
         <section className={styles['BookingPage-images']}>
@@ -33,7 +34,7 @@ export default function BookingPage () {
         </section>
         <p className={styles['BookingPage-text']}>Find a table fon any occasion</p>
         <BookingForm dispatch={dispatch} availableTimes={ state.availableTimes } submitForm={submitForm} />
-      </main>
+      </Main>
       <Footer />
     </>
   )

@@ -6,6 +6,7 @@ import BookingPage from '../pages/booking/BookingPage '
 import AboutPage from '../pages/about'
 import MenuPage from '../pages/menu/MenuPage'
 import ShoppingPage from '../pages/shop/ShoppingPage'
+import Login from '../pages/login/Login'
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +32,11 @@ export const router = createBrowserRouter([
   {
     path: '/cart',
     element: <ShoppingPage />,
+    errorElement: <NotFound/>
+  },
+  {
+    path: '/login',
+    element: <Login />,
     errorElement: <NotFound/>
   }
 ])

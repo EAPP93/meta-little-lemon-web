@@ -1,7 +1,7 @@
 @import '../../styles/variables.module.css';
 
 .Menu {
-  max-height: 90vh;
+
   overflow: hidden;
 }
 
@@ -21,6 +21,10 @@
   font-family: var(--font-text);
   font-size: var(--font-size-text);
   color: var(--color-secondary-2);
+}
+
+.Menu-dishes {
+  height: 55vh;
 }
 
 @media screen and (min-width: 577px) {

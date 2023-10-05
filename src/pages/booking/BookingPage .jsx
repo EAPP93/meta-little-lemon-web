@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../../components/header'
 import Footer from '../../components/footer'
 import Picture from '../../components/picture'
@@ -12,6 +12,10 @@ export default function BookingPage () {
   const cook = () => require('../../assets/img/cooker-min.png')
 
   const { state, dispatch } = useDateContext()
+
+  useEffect(() => {
+    dispatch({ type: 'INITIALIZE_TIMES', payload: new Date().toLocaleDateString })
+  }, [])
 
   const submitForm = (data) => {
     console.log(submitAPI(data))

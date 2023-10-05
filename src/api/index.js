@@ -60,7 +60,7 @@ export const submitAPI = (formData) => {
   if (data.diners < 1 && data.diners > 10) return false
 
   if (typeof data.occasion !== 'string') return false
-  if (!(data.occasion === 'Birthday' || data.occasion === 'Anniversary' || data.occasion === 'Others')) return false
+  if (!(data.occasion === 'birthday' || data.occasion === 'anniversary' || data.occasion === 'others')) return false
 
   if (typeof data.seating !== 'string') return false
   if (!(data.seating === 'standard' || data.seating === 'outside')) return false

@@ -1,13 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import PropTypes from 'prop-types'
 import styles from './booking-form.module.css'
 export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
-  useEffect(() => {
-    dispatch({ type: 'INITIALIZE_TIMES', payload: new Date().toLocaleDateString })
-  }, [])
-
   const formik = useFormik({
     initialValues: {
       date: '',
@@ -22,7 +18,8 @@ export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
         .min(1, 'Minimum of 1 guest')
         .max(10, 'Maximum of 10 guests')
         .required('Number of guests is required'),
-      occasion: Yup.string().required('Occasion is required'),
+      occasion: Yup.string().oneOf(['birthday', 'anniversary', 'others'], 'Invalid option')
+        .required('Occasion is required'),
       seating: Yup.string().required('Seating is required')
     }),
     onSubmit: values => {
@@ -56,7 +53,7 @@ export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
       </fieldset>
 
       <fieldset className={styles['BookingForm-container']}>
-        <label className={styles['BookingForm-label']} htmlFor="time">Time</label>
+        <label className={styles['BookingForm-label']} htmlFor="time">Time: </label>
         <select
           className={styles['BookingForm-input']}
           id="time"
@@ -75,7 +72,7 @@ export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
       </fieldset>
 
       <fieldset className={styles['BookingForm-container']}>
-        <label className={styles['BookingForm-label']} htmlFor="diners">Diners</label>
+        <label className={styles['BookingForm-label']} htmlFor="diners">Diners: </label>
         <input
           className={styles['BookingForm-input']}
           type="number"
@@ -93,7 +90,7 @@ export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
       </fieldset>
 
       <fieldset className={styles['BookingForm-container']}>
-        <label className={styles['BookingForm-label']} htmlFor="occasion">Occasion</label>
+        <label className={styles['BookingForm-label']} htmlFor="occasion">Occasion: </label>
         <select
           className={styles['BookingForm-input']}
           id="occasion"
@@ -102,9 +99,10 @@ export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
           onChange={formik.handleChange}
           value={formik.values.occasion}
         >
-          <option>Birthday</option>
-          <option>Anniversary</option>
-          <option>Others</option>
+          <option value={''}>----- </option>
+          <option value={'birthday'}>Birthday</option>
+          <option value={'anniversary'}>Anniversary</option>
+          <option value={'others'}>Others</option>
         </select>
         {
           formik.touched.occasion && formik.errors.occasion
@@ -119,26 +117,25 @@ export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
           <label className={styles['BookingForm-labelRadio']}>
             Standar options
             <input
-              className={styles['BookingForm-inputRadio']}
               type="radio"
               id="seating"
               name="seating"
-              value="standard"
               onBlur={formik.handleBlur}
               onChange={formik.handleChange}
+              value='standard'
               checked={formik.values.seating === 'standard'}
+
             />
           </label>
           <label className={styles['BookingForm-labelRadio']}>
             Outside
             <input
-              className={styles['BookingForm-inputRadio']}
               type="radio"
               id="seating"
               name="seating"
-              value="outside"
               onBlur={formik.handleBlur}
               onChange={formik.handleChange}
+              value='outside'
               checked={formik.values.seating === 'outside'}
             />
           </label>
@@ -148,7 +145,6 @@ export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
             ? (<div className={styles['BookingForm-error']}>{formik.errors.seating}</div>)
             : null
         }
-
       </fieldset>
 
       <input className={styles['BookingForm-btn']} type="submit" value="Make Your Reservation" />

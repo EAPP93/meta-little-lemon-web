@@ -33,6 +33,20 @@
   grid-row: 3/4;
 }
 
+.BookingForm-label {
+  position: absolute;
+  left: 0.75rem;
+  z-index: 1;
+}
+
+.BookingForm-input {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  padding: .5rem 0.5rem .5rem 3.25rem;
+  border-radius: 0.5rem;
+}
+
 .BookingForm-radio {
   grid-column: 1/6;
   grid-row: 4/6;
@@ -56,25 +70,7 @@
   display: flex;
   justify-content: space-between;
   align-items: end;
-  padding-right: 1rem;
-}
-
-.BookingForm-inputRadio {
-  margin-left: 1rem;
-}
-
-.BookingForm-label {
-  position: absolute;
-  left: 0.75rem;
-  z-index: 1;
-}
-
-.BookingForm-input {
-  width: 100%;
-  position: absolute;
-  left: 0;
-  padding: .5rem 0.5rem .5rem 3.25rem;
-  border-radius: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .BookingForm-container:nth-child(3)>.BookingForm-input {

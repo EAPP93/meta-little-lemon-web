@@ -7,9 +7,10 @@ export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
   const formik = useFormik({
     initialValues: {
       date: '',
-      time: '',
+      time: '00:00',
       diners: 1,
-      occasion: 'Birthday'
+      occasion: 'birthday',
+      seating: 'standard'
     },
     validationSchema: Yup.object({
       date: Yup.date().required('Date is required'),
@@ -37,7 +38,6 @@ export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
           type="date"
           id="date"
           name="date"
-          placeholder='Date'
           onBlur={formik.handleBlur}
           onChange={(event) => {
             dispatch({ type: 'UPDATE_TIMES', payload: event.target.value })
@@ -58,7 +58,6 @@ export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
           className={styles['BookingForm-input']}
           id="time"
           name="time"
-          onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.time}
         >
@@ -99,7 +98,6 @@ export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
           onChange={formik.handleChange}
           value={formik.values.occasion}
         >
-          <option value={''}>----- </option>
           <option value={'birthday'}>Birthday</option>
           <option value={'anniversary'}>Anniversary</option>
           <option value={'others'}>Others</option>
@@ -120,11 +118,9 @@ export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
               type="radio"
               id="seating"
               name="seating"
-              onBlur={formik.handleBlur}
               onChange={formik.handleChange}
               value='standard'
               checked={formik.values.seating === 'standard'}
-
             />
           </label>
           <label className={styles['BookingForm-labelRadio']}>
@@ -133,18 +129,12 @@ export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
               type="radio"
               id="seating"
               name="seating"
-              onBlur={formik.handleBlur}
               onChange={formik.handleChange}
               value='outside'
               checked={formik.values.seating === 'outside'}
             />
           </label>
         </section>
-        {
-          formik.touched.seating && formik.errors.seating
-            ? (<div className={styles['BookingForm-error']}>{formik.errors.seating}</div>)
-            : null
-        }
       </fieldset>
 
       <input className={styles['BookingForm-btn']} type="submit" value="Make Your Reservation" />

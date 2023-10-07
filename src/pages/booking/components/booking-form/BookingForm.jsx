@@ -4,17 +4,19 @@ import * as Yup from 'yup'
 import PropTypes from 'prop-types'
 import styles from './booking-form.module.css'
 export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
+  const times = [' --- ', ...availableTimes]
   const formik = useFormik({
     initialValues: {
       date: '',
-      time: '',
+      time: ' --- ',
       diners: 1,
       occasion: 'birthday',
       seating: 'standard'
     },
     validationSchema: Yup.object({
       date: Yup.date().required('Date is required'),
-      time: Yup.string().required('Time is required'),
+      time: Yup.string().oneOf(['08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00'], 'Invalid option')
+        .required('Time is required'),
       diners: Yup.number()
         .min(1, 'Minimum of 1 guest')
         .max(10, 'Maximum of 10 guests')
@@ -24,7 +26,7 @@ export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
       seating: Yup.string().required('Seating is required')
     }),
     onSubmit: values => {
-      // alert(JSON.stringify(values, null, 2))
+      alert(JSON.stringify(values, null, 2))
       submitForm(JSON.stringify(values, null, 2))
     }
   })
@@ -57,10 +59,11 @@ export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
           className={styles['BookingForm-input']}
           id="time"
           name="time"
+          placeholder='----'
           onChange={formik.handleChange}
           value={formik.values.time}
         >
-          {availableTimes.map(time => <option key={time}>{time}</option>)}
+          {times.map(time => <option key={time}>{time}</option>)}
         </select>
         {
           formik.touched.time && formik.errors.time

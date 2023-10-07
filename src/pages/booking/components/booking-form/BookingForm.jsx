@@ -7,7 +7,7 @@ export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
   const formik = useFormik({
     initialValues: {
       date: '',
-      time: '00:00',
+      time: '',
       diners: 1,
       occasion: 'birthday',
       seating: 'standard'
@@ -38,7 +38,6 @@ export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
           type="date"
           id="date"
           name="date"
-          onBlur={formik.handleBlur}
           onChange={(event) => {
             dispatch({ type: 'UPDATE_TIMES', payload: event.target.value })
             formik.handleChange(event)

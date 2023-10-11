@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { fetchAPI } from '../api/index'
 
 // creamos contexto
-const DateContext = createContext(null)
+export const DateContext = createContext(null)
 
 // definimos estado inicial
 const initialState = {

@@ -1,0 +1,196 @@
+.ConfirmedBooking {
+  background-color: var(--color--primary-green);
+  padding: 1rem 1.125rem;
+}
+
+.ConfirmedBooking-title {
+  margin: 0 0 -1rem 0;
+  font-family: var(--font-title);
+  font-size: var(--font-size-title);
+  color: var(--color--primary-yellow);
+  line-height: var(--font-size-subtitle);
+}
+
+.ConfirmedBooking-subtitle,
+.ConfirmedBooking-text {
+  font-family: var(--font-title);
+  font-size: var(--font-size-subtitle);
+  color: var(--color-highlight-w);
+  padding: 1rem 0 0.25rem 0;
+}
+
+.u-padding-left {
+  padding-left: 0.75rem;
+}
+
+.ConfirmedBooking-details {
+  width: 100%;
+  height: 2rem;
+  background-color: white;
+  border-radius: 0.25rem;
+}
+
+.ConfirmedBooking-cardBookingForm {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  gap: 1rem;
+}
+
+.ConfirmedBooking-cardBookingForm>.ConfirmedBooking-text {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  text-align: start;
+}
+
+.ConfirmedBooking-container {
+  grid-column: 1/-1;
+  margin-right: 0.75rem;
+  position: relative;
+}
+
+
+.ConfirmedBooking-container .ConfirmedBooking-error {
+  position: absolute;
+  left: 0.5rem;
+  bottom: -0.1rem;
+  white-space: nowrap;
+}
+
+.ConfirmedBooking-container input {
+  padding: 0.75rem 0.25rem 0.75rem 0.25rem;
+  border-radius: 0.5rem;
+}
+
+.ConfirmedBooking-container:nth-of-type(1) {
+  grid-row: 2/3;
+}
+
+.ConfirmedBooking-container:nth-of-type(2) {
+  grid-row: 3/4;
+}
+
+.ConfirmedBooking-container:nth-of-type(1)>label,
+.ConfirmedBooking-container:nth-of-type(2)>label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 0.75rem 0 0 0.5rem;
+}
+
+.ConfirmedBooking-container:nth-of-type(1)>input,
+.ConfirmedBooking-container:nth-of-type(2)>input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.ConfirmedBooking-container:nth-of-type(1)>input {
+  padding-left: 6.5rem;
+}
+
+.ConfirmedBooking-container:nth-of-type(2)>input {
+  padding-left: 3.45rem;
+}
+
+.ConfirmedBooking-container:nth-of-type(3) {
+  grid-row: 4/5;
+  grid-column: 1/5;
+}
+
+.ConfirmedBooking-container:nth-of-type(3)>label,
+.ConfirmedBooking-container:nth-of-type(4)>label {
+  position: absolute;
+  top: -1rem;
+  left: 0.5rem;
+  color: var(--color-highlight-w);
+}
+
+.ConfirmedBooking-container:nth-of-type(3) input,
+.ConfirmedBooking-container:nth-of-type(4) input {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.ConfirmedBooking-container:nth-of-type(3) .ConfirmedBooking-error {
+  bottom: -1.5rem;
+  height: 50%;
+  white-space: collapse;
+}
+
+.ConfirmedBooking-container:nth-of-type(4) {
+  grid-row: 4/5;
+  grid-column: 5/-1;
+  display: flex;
+}
+
+.ConfirmedBooking-container:nth-of-type(4) .ConfirmedBooking-error {
+  bottom: -0.75rem;
+}
+
+.ConfirmedBooking-container:nth-of-type(4) input {
+  right: calc(25% + 1rem);
+  padding-left: 0.5rem;
+}
+
+.ConfirmedBooking-container:nth-of-type(4) .ConfirmedBooking-picture {
+  position: absolute;
+  right: 0;
+  background-color: var(--color-highlight-w);
+  border-radius: 0.5rem;
+  width: 25%;
+  height: 2.65rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ConfirmedBooking-container:nth-of-type(4) .ConfirmedBooking-img {
+  padding: 0.25rem 0.25rem;
+  width: 2.25rem;
+}
+
+.ConfirmedBooking-container:nth-of-type(5) {
+  grid-row: 5/6;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.ConfirmedBooking-container:nth-of-type(5) input {
+  vertical-align: middle;
+  margin-left: 1rem;
+}
+
+.ConfirmedBooking-btn {
+  grid-row: 7/8;
+  grid-column: 1/-1;
+  left: 0;
+  right: 0;
+  height: 2.5rem;
+  background-color: var(--color--primary-yellow);
+  border-radius: 0.5rem;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 577px) {
+  .ConfirmedBooking {
+    padding: 1.5vw 5vw;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .ConfirmedBooking {
+    padding: 1.5vw 15vw;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .ConfirmedBooking {
+    padding: 1.5vw 22.5vw;
+  }
+}

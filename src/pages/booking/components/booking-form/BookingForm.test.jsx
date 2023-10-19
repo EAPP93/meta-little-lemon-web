@@ -27,7 +27,7 @@ describe('BookingForm Component', () => {
     expect(screen.getByText('Seating Options')).toBeInTheDocument()
     expect(screen.getByText('Standar options')).toBeInTheDocument()
     expect(screen.getByText('Outside')).toBeInTheDocument()
-    expect(screen.getByText('Make Your Reservation')).toBeInTheDocument()
+    expect(screen.getByText('Lets go')).toBeInTheDocument()
   })
 
   // Prueba 2: Verifica que los valores de los campos de formulario se actualicen correctamente.
@@ -79,7 +79,7 @@ describe('BookingForm Component', () => {
     const dinersInput = screen.getByLabelText('Diners:')
     const occasionSelect = screen.getByLabelText('Occasion:')
     const standardRadio = screen.getByLabelText('Standar options')
-    const submitButton = screen.getByText('Make Your Reservation')
+    const submitButton = screen.getByText('Lets go')
 
     // Envuelve las actualizaciones de estado dentro de una función act.
     await act(() => {

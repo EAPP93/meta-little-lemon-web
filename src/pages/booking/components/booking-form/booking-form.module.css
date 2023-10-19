@@ -9,7 +9,6 @@
   position: relative;
   display: flex;
   align-items: center;
-  position: relative;
 }
 
 .BookingForm-container:nth-child(1) {

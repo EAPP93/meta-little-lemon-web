@@ -7,19 +7,24 @@ import BookingForm from './components/booking-form/BookingForm'
 import styles from './booking-page.module.css'
 import { useDateContext } from '../../context/DateProvider'
 import { submitAPI } from '../../api'
-
+import { useNavigate } from 'react-router-dom'
 export default function BookingPage () {
   const restaurant = () => require('../../assets/img/restaurant.jpg')
   const cook = () => require('../../assets/img/cooker-min.png')
 
   const { state, dispatch } = useDateContext()
+  const navigate = useNavigate()
 
   useEffect(() => {
     dispatch({ type: 'INITIALIZE_TIMES', payload: new Date().toLocaleDateString })
   }, [])
 
   const submitForm = (data) => {
-    console.log(submitAPI(data))
+    console.log(data)
+    if (submitAPI(data)) {
+      dispatch({ type: 'SET_DATA', payload: data })
+      return navigate('/booking/confirmed')
+    }
   }
 
   return (

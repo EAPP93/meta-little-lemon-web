@@ -26,7 +26,6 @@ export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
       seating: Yup.string().required('Seating is required')
     }),
     onSubmit: values => {
-      // alert(JSON.stringify(values, null, 2))
       submitForm(JSON.stringify(values, null, 2))
     }
   })
@@ -139,7 +138,7 @@ export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
         </section>
       </fieldset>
 
-      <input className={styles['BookingForm-btn']} type="submit" value="Make Your Reservation" />
+      <input className={styles['BookingForm-btn']} type="submit" value="Lets go" />
     </form>
   )
 }

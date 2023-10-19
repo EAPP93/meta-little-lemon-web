@@ -7,6 +7,7 @@ import AboutPage from '../pages/about'
 import MenuPage from '../pages/menu/MenuPage'
 import ShoppingPage from '../pages/shop/ShoppingPage'
 import Login from '../pages/login/Login'
+import ConfirmedBooking from '../pages/booking/components/confirmed-booking/ConfirmedBooking'
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +28,11 @@ export const router = createBrowserRouter([
   {
     path: '/booking',
     element: <BookingPage />,
+    errorElement: <NotFound />
+  },
+  {
+    path: '/booking/confirmed',
+    element: <ConfirmedBooking/>,
     errorElement: <NotFound/>
   },
   {

@@ -1,0 +1,10 @@
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="credit_score">
+<mask id="mask0_138_481" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36">
+<rect id="Bounding box" width="36" height="36" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_138_481)">
+<path id="credit_score_2" d="M6 12H30V9H6V12ZM3 9C3 8.175 3.29375 7.46875 3.88125 6.88125C4.46875 6.29375 5.175 6 6 6H30C30.825 6 31.5312 6.29375 32.1188 6.88125C32.7063 7.46875 33 8.175 33 9V18H6V27H12.15V30H6C5.175 30 4.46875 29.7063 3.88125 29.1188C3.29375 28.5312 3 27.825 3 27V9ZM22.425 33L16.05 26.625L18.15 24.525L22.425 28.725L30.9 20.25L33 22.425L22.425 33ZM6 9V27V20.25V24.4875V9Z" fill="#1C1B1F"/>
+</g>
+</g>
+</svg>

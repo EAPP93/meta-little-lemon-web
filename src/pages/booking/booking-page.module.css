@@ -11,20 +11,12 @@
   line-height: var(--font-size-subtitle);
 }
 
-
-.BookingPage-subtitle {
-  font-family: var(--font-subtitle);
-}
-
 .BookingPage-subtitle,
 .BookingPage-text {
+  font-family: var(--font-title);
   font-size: var(--font-size-subtitle);
   color: var(--color-highlight-w);
   padding: 1rem 0;
-}
-
-.BookingPage-text {
-  font-family: var(--font-title);
 }
 
 .BookingPage-images {

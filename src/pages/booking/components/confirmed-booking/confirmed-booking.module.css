@@ -23,17 +23,29 @@
   padding-left: 0.75rem;
 }
 
-.ConfirmedBooking-details {
+.ConfirmedBooking-details,
+.ConfirmedBooking-book {
   width: 100%;
   height: 2rem;
+  display: flex;
+  align-items: center;
   background-color: white;
-  border-radius: 0.25rem;
+  border-radius: 0.25rem 0.25rem 0 0;
+  padding-left: 1rem;
+  vertical-align: center;
+}
+
+.ConfirmedBooking-book {
+  gap: 1rem;
+  border-top: 2px solid black;
+  border-radius: 0 0 0.25rem 0.25rem;
+  background-color: var(--color-secondary-2);
 }
 
 .ConfirmedBooking-cardBookingForm {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   gap: 1rem;
 }
 
@@ -41,12 +53,14 @@
   grid-column: 1/-1;
   grid-row: 1/2;
   text-align: start;
+  padding-left: 0.75rem;
 }
 
 .ConfirmedBooking-container {
   grid-column: 1/-1;
   margin-right: 0.75rem;
   position: relative;
+  margin-left: 0.75rem;
 }
 
 
@@ -158,16 +172,16 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 1rem;
+  gap: 0.25rem;
 }
 
 .ConfirmedBooking-container:nth-of-type(5) input {
   vertical-align: middle;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
 }
 
 .ConfirmedBooking-btn {
-  grid-row: 7/8;
+  grid-row: 6/7;
   grid-column: 1/-1;
   left: 0;
   right: 0;

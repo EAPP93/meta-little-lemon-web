@@ -8,7 +8,7 @@ export const DateContext = createContext(null)
 // definimos estado inicial
 const initialState = {
   availableTimes: [],
-  data: {}
+  book: {}
 }
 
 // definimos las acciones para el dispatch
@@ -31,7 +31,7 @@ const Reducer = (state, action) => {
       }
     case actions.SET_DATA:
       return {
-        data: action.payload
+        book: JSON.parse(action.payload)
       }
     default:
       return state

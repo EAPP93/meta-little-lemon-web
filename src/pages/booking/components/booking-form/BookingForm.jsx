@@ -4,7 +4,6 @@ import * as Yup from 'yup'
 import PropTypes from 'prop-types'
 import styles from './booking-form.module.css'
 export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
-  const times = [' --- ', ...availableTimes]
   const formik = useFormik({
     initialValues: {
       date: '',
@@ -62,7 +61,7 @@ export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
           onChange={formik.handleChange}
           value={formik.values.time}
         >
-          {times.map(time => <option key={time}>{time}</option>)}
+          {availableTimes?.map(time => <option key={time}>{time}</option>)}
         </select>
         {
           formik.touched.time && formik.errors.time
@@ -145,6 +144,6 @@ export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
 
 BookingForm.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  availableTimes: PropTypes.arrayOf(PropTypes.string).isRequired,
+  availableTimes: PropTypes.arrayOf(PropTypes.string),
   submitForm: PropTypes.func.isRequired
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import styles from './confirmed-booking.module.css'
@@ -6,10 +6,28 @@ import Header from '../../../../components/header'
 import Footer from '../../../../components/footer'
 import Main from '../../../../components/main'
 import Picture from '../../../../components/picture'
+import { useDateContext } from '../../../../context/DateProvider'
+import { useNavigate } from 'react-router-dom'
+import Notification from '../../../../components/notification/Notification'
 
 export default function ConfirmedBooking () {
+  const { state } = useDateContext()
+  const [active, setActive] = useState(false)
+  const [showNotification, setShowNotification] = useState(false)
+  const navigate = useNavigate()
+
+  const showData = () => setActive(!active)
+  const show = () => {
+    setShowNotification(false)
+    return navigate('/booking')
+  }
+
+  useEffect(() => {
+    if (Object.keys(state.book).length < 1) return navigate('/booking')
+  }, [state.data])
+
   const ccvImage = () => require('../../../../assets/img/credit_score.svg')
-  // const selectedItem = () => { }
+
   const formik = useFormik({
     initialValues: {
       cardNumber: '',
@@ -20,7 +38,7 @@ export default function ConfirmedBooking () {
     },
     validationSchema: Yup.object().shape({
       cardNumber: Yup.string()
-        .matches(/^[0-9]{16}$/, 'El número de tarjeta debe tener 16 dígitos')
+        .matches(/^(4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$/, 'Número de tarjeta de crédito no válido')
         .required('El número de tarjeta es obligatorio'),
       name: Yup.string()
         .matches(/^[\w\s]+$/, 'Ingrese un nombre válido')
@@ -48,18 +66,31 @@ export default function ConfirmedBooking () {
         .required('La confirmación es obligatoria')
     }),
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2))
+      setShowNotification(true)
+      // alert(JSON.stringify(values, null, 2))
     }
   })
   return (
     <>
+      {showNotification ? <Notification show={show} /> : ''}
       <Header />
       <Main style={styles.ConfirmedBooking}>
         <h1 className={styles['ConfirmedBooking-title']}>Little Lemon</h1>
         <h2 className={styles['ConfirmedBooking-subtitle']}>Chicago</h2>
         <p className={`${styles['ConfirmedBooking-text']} ${styles['u-padding-left']}`}>Booking details</p>
-        <section className={styles['ConfirmedBooking-details']}></section>
-        <form className={`${styles['ConfirmedBooking-cardBookingForm']} ${styles['u-padding-left']}`} onSubmit={formik.handleSubmit}>
+        <section className={styles['ConfirmedBooking-details']} onClick={showData}>
+          <p>Date - Time - Number of diners</p>
+        </section>
+        {
+          active &&
+          <section className={styles['ConfirmedBooking-book']}>
+            <span>{`Date: ${state.book.date}`}</span>
+            <span>{`Time: ${state.book.time}`}</span>
+            <span>{`Diners: ${state.book.diners}`}</span>
+          </section>
+        }
+
+        <form className={styles['ConfirmedBooking-cardBookingForm']} onSubmit={formik.handleSubmit}>
           <p className={styles['ConfirmedBooking-text']}>Booking Cards details</p>
           <fieldset className={styles['ConfirmedBooking-container']}>
             <label
@@ -143,27 +174,27 @@ export default function ConfirmedBooking () {
 
           <fieldset className={styles['ConfirmedBooking-container']}>
             <label >
-            Send me booking confirmation via text
-            <input
-              type="radio"
-              id="sendConfirmation"
-              name="sendConfirmation"
-              onChange={formik.handleChange}
-              value='text'
-              checked={formik.values.sendConfirmation === 'text'}
-            />
-          </label>
-          <label >
-            Send me booking confirmation via email
-            <input
-              type="radio"
-              id="sendConfirmation"
-              name="sendConfirmation"
-              onChange={formik.handleChange}
-              value='email'
-              checked={formik.values.sendConfirmation === 'email'}
-            />
-          </label>
+              Send me booking confirmation via text
+              <input
+                type="radio"
+                id="sendConfirmation"
+                name="sendConfirmation"
+                onChange={formik.handleChange}
+                value='text'
+                checked={formik.values.sendConfirmation === 'text'}
+              />
+            </label>
+            <label >
+              Send me booking confirmation via email
+              <input
+                type="radio"
+                id="sendConfirmation"
+                name="sendConfirmation"
+                onChange={formik.handleChange}
+                value='email'
+                checked={formik.values.sendConfirmation === 'email'}
+              />
+            </label>
           </fieldset>
 
           <input className={styles['ConfirmedBooking-btn']} type="submit" value="Book" />

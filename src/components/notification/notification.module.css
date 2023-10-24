@@ -7,7 +7,7 @@
   z-index: 9;
   width: 60%;
   min-height: 5rem;
-  padding: 2rem 1rem 1rem 1rem;
+  padding: 2rem 2.5rem 1rem 2.5rem;
   border-radius: 0.5rem;
   box-shadow: 1rem 1rem 5rem var(--color-highlight-b),
     -1rem -1rem 5rem var(--color-highlight-b);
@@ -17,8 +17,19 @@
   gap: 1rem;
 }
 
-.Notification-topic {
+.Notification-title {
   text-align: center;
+  line-height: var(--font-line-height);
+  font-family: var(--font-title);
+  font-size: var(--font-size-subtitle);
+  color: var(--color-secondary-1);
+  padding: -1rem 0;
+}
+
+.Notification-text {
+  font-family: var(--font-text);
+  font-size: var(--font-size-text);
+  color: var(--color-highlight-b);
 }
 
 .Notification-btn {
@@ -27,4 +38,5 @@
   width: 80%;
   padding: 1rem;
   border-radius: 0.5rem;
+  font-family: var(--font-text);
 }

@@ -28,6 +28,11 @@ export default function ConfirmedBooking () {
 
   const ccvImage = () => require('../../../../assets/img/credit_score.svg')
 
+  const dataNotification = {
+    title: 'Booking Successful',
+    text: `The reservation has been successful for the day ${state.book.date} at ${state.book.time} with ${state.book.diners} diners`,
+    btn: 'OK'
+  }
   const formik = useFormik({
     initialValues: {
       cardNumber: '',
@@ -72,7 +77,7 @@ export default function ConfirmedBooking () {
   })
   return (
     <>
-      {showNotification ? <Notification show={show} /> : ''}
+      {showNotification ? <Notification show={show} data={dataNotification}/> : ''}
       <Header />
       <Main style={styles.ConfirmedBooking}>
         <h1 className={styles['ConfirmedBooking-title']}>Little Lemon</h1>

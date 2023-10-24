@@ -8,7 +8,8 @@ export const DateContext = createContext(null)
 // definimos estado inicial
 const initialState = {
   availableTimes: [],
-  book: {}
+  book: {},
+  credit: {}
 }
 
 // definimos las acciones para el dispatch
@@ -23,11 +24,11 @@ const Reducer = (state, action) => {
   switch (action.type) {
     case actions.INITIALIZE_TIMES:
       return {
-        availableTimes: fetchAPI(action.payload)
+        availableTimes: [' --- ', ...fetchAPI(action.payload)]
       }
     case actions.UPDATE_TIMES:
       return {
-        availableTimes: fetchAPI(action.payload)
+        availableTimes: [' --- ', ...fetchAPI(action.payload)]
       }
     case actions.SET_DATA:
       return {

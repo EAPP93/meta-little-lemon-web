@@ -8,8 +8,7 @@ export const DateContext = createContext(null)
 // definimos estado inicial
 const initialState = {
   availableTimes: [],
-  book: {},
-  credit: {}
+  book: {}
 }
 
 // definimos las acciones para el dispatch

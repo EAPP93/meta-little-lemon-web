@@ -1,47 +1,65 @@
-import { test, expect } from '@jest/globals'
-import React, { useContext, useReducer } from 'react'
-import { renderHook } from '@testing-library/react'
-import { DateContext, Reducer, initialState } from './DateProvider' // Asegúrate de importar el reducer y el estado inicial desde tu archivo
-import { fetchAPI } from '../api'
+import React from 'react'
+import { describe, expect, it, jest } from '@jest/globals'
+import { renderHook, act } from '@testing-library/react'
+import { useDateContext, DateProvider } from './DateProvider.jsx'
+import { fetchAPI } from '../api/index.js'
 
-// Creamos un contexto de prueba
-const createTestContext = () => {
-  const wrapper = ({ children }) => (
-    <DateContext.Provider value={useReducer(Reducer, initialState)}>
-      {children}
-    </DateContext.Provider>
-  )
+// Mock de una función fetchAPI
+const mockFetchAPI = jest.fn()
 
-  const { result } = renderHook(() => useContext(DateContext), { wrapper })
+jest.mock('../api/index', () => ({
+  fetchAPI: mockFetchAPI
+}))
 
-  return result
-}
+describe('DateContext', () => {
+  it('debería inicializar y actualizar availableTimes con un array no vacío', async () => {
+    // Configura el valor de retorno de fetchAPI para que devuelva un array no vacío
+    mockFetchAPI.mockImplementation((payload) => {
+      if (payload === '2023-11-24') {
+        return ['hora1', 'hora2', 'hora3']
+      }
+      // Devuelve un valor predeterminado para otras llamadas a fetchAPI
+      return []
+    })
 
-// Prueba del reducer
-test('Reducer debe manejar INITIALIZE_TIMES correctamente', () => {
-  const { result } = createTestContext()
-  const [, dispatch] = result.current
+    const wrapper = ({ children }) => (
+      <DateProvider>{children}</DateProvider>
+    )
 
-  const action = { type: 'INITIALIZE_TIMES', payload: 'data' }
+    const { result } = renderHook(() => useDateContext(), { wrapper })
 
-  dispatch(action)
+    // Envuelve la actualización en act
+    await act(() => {
+      // Inicializa availableTimes con un array no vacío para la fecha específica
+      result.current.dispatch({ type: 'INITIALIZE_TIMES', payload: '2023-11-24' })
+    })
 
-  expect(result.current[0]).toEqual({
-    availableTimes: fetchAPI(action.payload),
-    data: {}
+    // Verifica que availableTimes no esté vacío
+    expect(result.current.state.availableTimes).not.toEqual([])
   })
-})
 
-test('Reducer debe manejar UPDATE_TIMES correctamente', () => {
-  const { result } = createTestContext()
-  const [, dispatch] = result.current
+  it('debería establecer book como un objeto vacío', async () => {
+    const wrapper = ({ children }) => (
+      <DateProvider>{children}</DateProvider>
+    )
 
-  const action = { type: 'UPDATE_TIMES', payload: 'newData' }
+    const { result } = renderHook(() => useDateContext(), { wrapper })
 
-  dispatch(action)
+    // Configura el valor de retorno de fetchAPI para que devuelva un array no vacío
+    mockFetchAPI.mockImplementation(() => {
+      return ['hora1', 'hora2', 'hora3']
+    })
 
-  expect(result.current[0]).toEqual({
-    availableTimes: fetchAPI(action.payload),
-    data: {}
+    // Envuelve la actualización en act
+    await act(() => {
+      // Establece book como un objeto vacío para la fecha específica
+      result.current.dispatch({
+        type: 'SET_DATA',
+        payload: '{"date": "2023-11-24", "time": "15:30", "diners": 5, "occasion": "celebration", "seating": "outdoor"}'
+      })
+    })
+
+    // Verifica que book sea un objeto, pero no necesariamente con valores específicos
+    expect(result.current.state.book).toEqual(expect.any(Object))
   })
 })

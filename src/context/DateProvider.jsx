@@ -6,13 +6,13 @@ import { fetchAPI } from '../api/index'
 export const DateContext = createContext(null)
 
 // definimos estado inicial
-const initialState = {
+export const initialState = {
   availableTimes: [],
   book: {}
 }
 
 // definimos las acciones para el dispatch
-const actions = {
+export const actions = {
   INITIALIZE_TIMES: 'INITIALIZE_TIMES',
   UPDATE_TIMES: 'UPDATE_TIMES',
   SET_DATA: 'SET_DATA'

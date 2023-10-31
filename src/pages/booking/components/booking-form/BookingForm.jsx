@@ -30,7 +30,7 @@ export default function BookingForm ({ dispatch, availableTimes, submitForm }) {
   })
 
   return (
-    <form className={styles.BookingForm} onSubmit={formik.handleSubmit} >
+    <form role='form' aria-label='date booking' className={styles.BookingForm} onSubmit={formik.handleSubmit} >
       <fieldset className={styles['BookingForm-container']}>
         <label className={styles['BookingForm-label']} htmlFor="date">Date: </label>
         <input

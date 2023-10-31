@@ -31,8 +31,8 @@ export default function BookingPage () {
     <>
       <Header />
       <Main style={styles.BookingPage}>
-        <h1 className={styles['BookingPage-title']}>Little Lemon</h1>
-        <h2 className={styles['BookingPage-subtitle']}>Chicago</h2>
+        <h1 role="heading" aria-level="1" className={styles['BookingPage-title']}>Little Lemon</h1>
+        <h2 role="heading" aria-level="2" className={styles['BookingPage-subtitle']}>Chicago</h2>
         <section className={styles['BookingPage-images']}>
           <Picture defaultImage={ { src: restaurant(), alt: 'image of restaurant' }} list={[]} picture={styles['BookingPage-picture']} />
           <Picture defaultImage={ { src: cook(), alt: 'image of restaurant' }} list={[]} picture={styles['BookingPage-picture']} />

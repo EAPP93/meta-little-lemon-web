@@ -27,6 +27,7 @@ export default function ConfirmedBooking () {
   }, [state.data])
 
   const ccvImage = () => require('../../../../assets/img/credit_score.svg')
+  const arrowImage = () => require('../../../../assets/img/keyboard_arrow_down.svg')
 
   const dataNotification = {
     title: 'Booking Successful',
@@ -85,6 +86,7 @@ export default function ConfirmedBooking () {
         <p className={`${styles['ConfirmedBooking-text']} ${styles['u-padding-left']}`}>Booking details</p>
         <section className={styles['ConfirmedBooking-details']} onClick={showData}>
           <p>Date - Time - Number of diners</p>
+          <Picture defaultImage={{ src: arrowImage(), alt: '' }} list={[]} picture={styles['ConfirmedBooking-arrow']}/>
         </section>
         {
           active &&

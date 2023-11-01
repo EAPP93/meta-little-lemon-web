@@ -39,4 +39,4 @@ Asegúrate de tener Node.js y npm instalados en tu sistema. Si no los tienes, pu
    ```
 
 ----
-** IMPORTANTE!!! - El proyecto es configurado para lanzar el servido en el puerto 3000 en el navegador google chrome**
+** IMPORTANTE!!! - El proyecto es configurado para lanzar el servido en el puerto 3000 en el navegador google chrome, si desea cambiar esto por favor valla a la configuración de webpack.dev.js en config y busque devServer y modifique open**

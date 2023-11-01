@@ -40,3 +40,8 @@ Asegúrate de tener Node.js y npm instalados en tu sistema. Si no los tienes, pu
 
 ----
 ** IMPORTANTE!!! - El proyecto es configurado para lanzar el servido en el puerto 3000 en el navegador google chrome, si desea cambiar esto por favor valla a la configuración de webpack.dev.js en config y busque devServer y modifique open**
+
+### Figma
+😕
+[Diseño](https://www.figma.com/file/XOfu3OpLjh9GN2WEOPC3Jh/meta---proyecto-final--wireframing?type=design&node-id=190%3A652&mode=design&t=bdfL6MPQ6URxWDlV-1)
+

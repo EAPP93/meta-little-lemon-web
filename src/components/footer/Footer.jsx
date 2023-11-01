@@ -43,7 +43,7 @@ export default function Footer () {
       <ul className={styles['Footer-socials']}>
         {
           SocialMedia.map((el, index) => {
-            return <li key={index}><a href={el.link}>{el.type}</a></li>
+            return <li key={index}><a href={el.link} className={styles['Footer-anchor']}>{el.type}</a></li>
           })
         }
       </ul>

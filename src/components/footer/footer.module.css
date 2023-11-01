@@ -25,11 +25,19 @@
   list-style: none;
   font-family: var(--font-text);
   font-size: var(--font-size-subtext);
-  color: var(--color-highlight-b);
+  color: var(--color-secondary-2);
+}
+
+.Footer-anchor {
+  color: var(--color-secondary-2);
+}
+
+.Footer-link {
+  color: var(--color-highlight-w);
 }
 
 .Footer-link:hover {
-  color: var(--color-highlight-w);
+  color: var(--color-secondary-2);
 }
 
 a {

@@ -23,7 +23,7 @@ Asegúrate de tener Node.js y npm instalados en tu sistema. Si no los tienes, pu
 1. Ingresa a la carpeta del proyecto:
 
    ``` bash
-   cd tu-proyecto-react
+   cd meta-little-lemon-web
    ```
 
 1. Instala las dependencias del proyecto:
